@@ -726,9 +726,9 @@ export const InteractiveTimeline = ({
 
       {/* Timeline */}
       <div className="relative">
-        <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+        <div className="absolute left-3 sm:left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
 
-        <div className="space-y-6 sm:space-y-8">
+        <div className="space-y-4 sm:space-y-6 md:space-y-8">
           {filteredData.map((event, index) => {
             const IconComponent = getCategoryIcon(event.category);
             const borderColor = getCategoryBorderColor(event.category);
@@ -737,13 +737,13 @@ export const InteractiveTimeline = ({
             return (
               <div
                 key={event.id}
-                className="relative flex items-start space-x-3 sm:space-x-6"
+                className="relative flex items-start space-x-2 sm:space-x-3 md:space-x-6"
               >
                 <div
-                  className={`flex-shrink-0 w-8 h-8 sm:w-16 sm:h-16 bg-white border-2 sm:border-4 ${borderColor} rounded-full flex items-center justify-center shadow-lg`}
+                  className={`flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-white border-2 sm:border-2 md:border-3 lg:border-4 ${borderColor} rounded-full flex items-center justify-center shadow-lg`}
                 >
                   <IconComponent
-                    className={`w-3 h-3 sm:w-6 sm:h-6 ${textColor}`}
+                    className={`w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-6 lg:h-6 ${textColor}`}
                   />
                 </div>
 
@@ -757,10 +757,10 @@ export const InteractiveTimeline = ({
                     )
                   }
                 >
-                  <CardHeader className="pb-3 sm:pb-4">
+                  <CardHeader className="pb-2 sm:pb-3 md:pb-4 px-3 sm:px-4 md:px-6 pt-3 sm:pt-4 md:pt-6">
                     <div className="flex items-start justify-between">
                       <div className="space-y-1 sm:space-y-2 flex-1 min-w-0">
-                        <div className="flex items-center space-x-2 flex-wrap gap-1">
+                        <div className="flex items-center space-x-1 sm:space-x-2 flex-wrap gap-1">
                           <CalendarIcon className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 flex-shrink-0" />
                           <span className="text-xs sm:text-sm text-gray-500 font-medium">
                             {event.date}
@@ -768,7 +768,7 @@ export const InteractiveTimeline = ({
                           <Badge
                             className={`${getCategoryColor(
                               event.category
-                            )} text-xs`}
+                            )} text-xs px-1.5 py-0.5`}
                           >
                             {event.category === "LLM"
                               ? "LLM"
@@ -781,10 +781,10 @@ export const InteractiveTimeline = ({
                               : event.category}
                           </Badge>
                         </div>
-                        <CardTitle className="text-lg sm:text-xl text-gray-900 break-words">
+                        <CardTitle className="text-base sm:text-lg md:text-xl text-gray-900 break-words leading-tight">
                           {event.title}
                         </CardTitle>
-                        <CardDescription className="text-blue-600 font-medium text-sm sm:text-base break-words">
+                        <CardDescription className="text-blue-600 font-medium text-xs sm:text-sm md:text-base break-words">
                           {event.organization}
                         </CardDescription>
                       </div>
@@ -793,7 +793,7 @@ export const InteractiveTimeline = ({
                           variant="ghost"
                           size="sm"
                           asChild
-                          className="flex-shrink-0 ml-2"
+                          className="flex-shrink-0 ml-1 sm:ml-2 p-1 sm:p-2"
                         >
                           <a
                             href={event.website}
@@ -806,24 +806,24 @@ export const InteractiveTimeline = ({
                       )}
                     </div>
                   </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-700 mb-4 text-sm sm:text-base break-words">
+                  <CardContent className="pt-0 px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-6">
+                    <p className="text-gray-700 mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words leading-tight sm:leading-normal">
                       {event.description}
                     </p>
 
                     {selectedEvent?.id === event.id && (
-                      <div className="space-y-3 pt-4 border-t border-gray-200">
-                        <h4 className="font-semibold text-gray-900 text-sm sm:text-base">
+                      <div className="space-y-2 sm:space-y-3 pt-3 sm:pt-4 border-t border-gray-200">
+                        <h4 className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">
                           Key Features:
                         </h4>
-                        <ul className="space-y-2">
+                        <ul className="space-y-1.5 sm:space-y-2">
                           {event.details.map((detail, idx) => (
                             <li
                               key={idx}
-                              className="flex items-start space-x-2"
+                              className="flex items-start space-x-1.5 sm:space-x-2"
                             >
-                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-600 text-sm sm:text-base break-words">
+                              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-600 text-xs sm:text-sm md:text-base break-words leading-tight sm:leading-normal">
                                 {detail}
                               </span>
                             </li>

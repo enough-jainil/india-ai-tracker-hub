@@ -56,16 +56,16 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 w-full mobile-optimized">
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4 md:py-6">
+          <div className="space-y-3 sm:space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
             <div className="text-center lg:text-left">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Indian AI Tracker
               </h1>
-              <p className="text-gray-600 mt-2 text-sm sm:text-base lg:max-w-2xl">
+              <p className="text-gray-600 mt-1 sm:mt-2 text-xs sm:text-sm md:text-base lg:max-w-2xl leading-tight sm:leading-normal">
                 Tracking India's AI revolution with{" "}
                 <span className="font-semibold text-blue-600">20+ LLMs</span>,{" "}
                 <span className="font-semibold text-purple-600">8+ TTS</span>,{" "}
@@ -80,13 +80,13 @@ const Index = () => {
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-sm lg:w-64">
+              <div className="relative w-full max-w-xs sm:max-w-sm lg:w-64">
                 <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                 <Input
                   placeholder="Search organizations, models..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 w-full"
+                  className="pl-10 w-full text-sm"
                 />
               </div>
             </div>
@@ -94,23 +94,23 @@ const Index = () => {
         </div>
       </header>
       {/* Stats Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <section className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
           {stats.map((stat, index) => (
             <Card
               key={index}
               className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <CardContent className="p-6">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className={`p-3 rounded-lg ${stat.color}`}>
-                    <stat.icon className="h-6 w-6 text-white" />
+              <CardContent className="p-3 sm:p-4 md:p-6">
+                <div className="flex flex-col items-center text-center space-y-2 sm:space-y-3 md:space-y-4">
+                  <div className={`p-2 sm:p-3 rounded-lg ${stat.color}`}>
+                    <stat.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-gray-900">
+                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
                       {stat.value}
                     </p>
-                    <p className="text-gray-600 text-sm break-words whitespace-normal">
+                    <p className="text-gray-600 text-xs sm:text-sm break-words whitespace-normal leading-tight">
                       {stat.label}
                     </p>
                   </div>
@@ -122,26 +122,29 @@ const Index = () => {
       </section>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <Tabs defaultValue="timeline" className="space-y-8">
+      <main className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pb-8 sm:pb-12">
+        <Tabs defaultValue="timeline" className="space-y-6 sm:space-y-8">
           <TabsList className="grid w-full grid-cols-3 bg-white shadow-sm">
             <TabsTrigger
               value="timeline"
-              className="data-[state=active]:bg-blue-500 data-[state=active]:text-white"
+              className="data-[state=active]:bg-blue-500 data-[state=active]:text-white text-xs sm:text-sm px-2 sm:px-4"
             >
-              Timeline View
+              <span className="hidden sm:inline">Timeline View</span>
+              <span className="sm:hidden">Timeline</span>
             </TabsTrigger>
             <TabsTrigger
               value="companies"
-              className="data-[state=active]:bg-blue-500 data-[state=active]:text-white"
+              className="data-[state=active]:bg-blue-500 data-[state=active]:text-white text-xs sm:text-sm px-2 sm:px-4"
             >
-              Organizations
+              <span className="hidden sm:inline">Organizations</span>
+              <span className="sm:hidden">Orgs</span>
             </TabsTrigger>
             <TabsTrigger
               value="dashboard"
-              className="data-[state=active]:bg-blue-500 data-[state=active]:text-white"
+              className="data-[state=active]:bg-blue-500 data-[state=active]:text-white text-xs sm:text-sm px-2 sm:px-4"
             >
-              Progress Dashboard
+              <span className="hidden sm:inline">Progress Dashboard</span>
+              <span className="sm:hidden">Dashboard</span>
             </TabsTrigger>
           </TabsList>
 
