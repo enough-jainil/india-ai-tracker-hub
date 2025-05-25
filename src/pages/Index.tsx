@@ -14,8 +14,8 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const stats = [
-    { label: "Total LLMs", value: "12+", icon: BrainIcon, color: "bg-blue-500" },
-    { label: "Organizations", value: "8", icon: TrendingUpIcon, color: "bg-green-500" },
+    { label: "Total LLMs", value: "20+", icon: BrainIcon, color: "bg-blue-500" },
+    { label: "Organizations", value: "12", icon: TrendingUpIcon, color: "bg-green-500" },
     { label: "Years Tracked", value: "5", icon: CalendarIcon, color: "bg-purple-500" },
   ];
 
@@ -29,7 +29,7 @@ const Index = () => {
               <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Indian AI Tracker
               </h1>
-              <p className="text-gray-600 mt-2">Comprehensive platform tracking India's AI revolution (2020-2025)</p>
+              <p className="text-gray-600 mt-2">Comprehensive platform tracking India's AI revolution with 20+ models across 12+ organizations (2020-2025)</p>
             </div>
             <div className="flex items-center space-x-4">
               <div className="relative">
@@ -87,7 +87,7 @@ const Index = () => {
               <CardHeader>
                 <CardTitle className="text-2xl text-gray-900">Indian LLMs Timeline (2020-2025)</CardTitle>
                 <CardDescription>
-                  Interactive timeline showcasing the evolution of Large Language Models in India
+                  Interactive timeline showcasing the evolution of 20+ Large Language Models across 12+ organizations in India
                 </CardDescription>
               </CardHeader>
               <CardContent>

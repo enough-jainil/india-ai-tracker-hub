@@ -7,7 +7,7 @@ import { ExternalLinkIcon, MapPinIcon, UsersIcon, CalendarIcon } from "lucide-re
 interface Company {
   id: string;
   name: string;
-  type: "Academic" | "Startup" | "Research" | "Corporate";
+  type: "Academic" | "Startup" | "Research" | "Corporate" | "Government";
   location: string;
   founded: string;
   description: string;
@@ -30,7 +30,7 @@ const companies: Company[] = [
     achievements: [
       "First comprehensive Indian language model suite",
       "Open-source commitment",
-      "12+ Indian languages supported",
+      "22 Indian languages supported",
       "Academic research excellence"
     ],
     website: "https://ai4bharat.org",
@@ -43,11 +43,11 @@ const companies: Company[] = [
     location: "Bengaluru, India",
     founded: "2023",
     description: "AI startup building full-stack language AI for India with focus on practical applications and enterprise solutions.",
-    models: ["OpenHathi", "Sarvam-2B", "Sarvam-1", "Sarvam-m"],
+    models: ["OpenHathi", "Sarvam-2B", "Sarvam-1", "Sarvam-m", "Sovereign LLMs"],
     achievements: [
       "First Hindi-focused LLM",
       "Production-ready models",
-      "Enterprise partnerships",
+      "IndiaAI Mission partnership",
       "Multimodal capabilities"
     ],
     website: "https://sarvam.ai",
@@ -64,7 +64,7 @@ const companies: Company[] = [
     models: ["Krutrim-1", "Krutrim-2"],
     achievements: [
       "First Indian AI unicorn",
-      "20+ Indian languages",
+      "22 Indian languages understanding",
       "Massive commercial backing",
       "Comprehensive AI ecosystem"
     ],
@@ -73,13 +73,46 @@ const companies: Company[] = [
     employees: "200+"
   },
   {
+    id: "corover",
+    name: "CoRover.ai",
+    type: "Startup",
+    location: "Mumbai, India",
+    founded: "2016",
+    description: "AI company developing BharatGPT in collaboration with government's Bhashini initiative for public services.",
+    models: ["BharatGPT"],
+    achievements: [
+      "Government partnership",
+      "12+ languages for text, 14 for voice",
+      "Integrated with IRCTC and NPCI",
+      "Public services focus"
+    ],
+    website: "https://bharatgpt.ai",
+    employees: "200+"
+  },
+  {
+    id: "tech-mahindra",
+    name: "Tech Mahindra",
+    type: "Corporate",
+    location: "Pune, India",
+    founded: "1986",
+    description: "Global technology company developing open-source LLMs focused on Indic languages for enterprise needs.",
+    models: ["Project Indus"],
+    achievements: [
+      "Open-source initiative",
+      "Available on Hugging Face",
+      "Enterprise-focused solutions",
+      "Community-driven development"
+    ],
+    employees: "150,000+"
+  },
+  {
     id: "iit-bombay",
-    name: "IIT Bombay",
+    name: "IIT Bombay & Reliance Jio",
     type: "Academic",
     location: "Mumbai, India",
     founded: "1958",
-    description: "Leading technical institute developing cutting-edge multimodal AI models through BharatGPT consortium.",
-    models: ["Hanooman"],
+    description: "Leading technical institute with Reliance developing multimodal AI models through BharatGPT consortium.",
+    models: ["Hanooman AI"],
     achievements: [
       "Multimodal AI research",
       "11 Indian languages support",
@@ -103,6 +136,87 @@ const companies: Company[] = [
       "Strategic AI development"
     ],
     employees: "1000+ (Consortium)"
+  },
+  {
+    id: "telugu-llm-labs",
+    name: "Telugu LLM Labs",
+    type: "Research",
+    location: "Hyderabad, India",
+    founded: "2023",
+    description: "Specialized research lab focused on Telugu and other Indian language models with expanded linguistic support.",
+    models: ["Navarasa 2.0"],
+    achievements: [
+      "16 languages support",
+      "Gemma-based architecture",
+      "Regional language focus",
+      "Instruction-tuned capabilities"
+    ],
+    employees: "25+"
+  },
+  {
+    id: "gyan-ai",
+    name: "Gyan AI",
+    type: "Startup",
+    location: "Bengaluru, India",
+    founded: "2022",
+    description: "AI startup developing lightweight, efficient LLMs optimized for Indian languages with focus on transparency.",
+    models: ["Paramanu"],
+    achievements: [
+      "Lightweight architecture (13mn–367mn parameters)",
+      "Efficiency and transparency focus",
+      "Outperforms larger models",
+      "Mobile-optimized design"
+    ],
+    employees: "30+"
+  },
+  {
+    id: "yellow-ai",
+    name: "Yellow.ai",
+    type: "Startup",
+    location: "Bengaluru, India",
+    founded: "2016",
+    description: "Conversational AI platform developing proprietary LLMs for enterprise automation and customer service.",
+    models: ["YellowG"],
+    achievements: [
+      "Enterprise automation focus",
+      "Customer service bots",
+      "Voice assistants",
+      "Multiple Indian languages"
+    ],
+    funding: "$102M Total",
+    employees: "500+"
+  },
+  {
+    id: "zoho",
+    name: "Zoho Corporation",
+    type: "Corporate",
+    location: "Chennai, India",
+    founded: "1996",
+    description: "Software company developing domain-specific LLMs tailored for Indian enterprises and business applications.",
+    models: ["Zoho Domain LLMs"],
+    achievements: [
+      "7–20 billion parameters",
+      "Business domain specialization",
+      "Enterprise-tailored solutions",
+      "Multiple specialized models"
+    ],
+    employees: "15,000+"
+  },
+  {
+    id: "bhashini",
+    name: "Bhashini (Govt of India)",
+    type: "Government",
+    location: "New Delhi, India",
+    founded: "2022",
+    description: "Government digital platform for AI-powered language services, bridging digital divides across Indian languages.",
+    models: ["Bhashini Platform"],
+    achievements: [
+      "Automatic speech recognition",
+      "Translation services",
+      "Bridge digital divides",
+      "All Indian languages support"
+    ],
+    employees: "Government Initiative"
   }
 ];
 
@@ -123,6 +237,7 @@ export const CompanyProfiles = ({ searchTerm }: CompanyProfilesProps) => {
       case "Startup": return "bg-green-100 text-green-800";
       case "Research": return "bg-purple-100 text-purple-800";
       case "Corporate": return "bg-orange-100 text-orange-800";
+      case "Government": return "bg-red-100 text-red-800";
       default: return "bg-gray-100 text-gray-800";
     }
   };

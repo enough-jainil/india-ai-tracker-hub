@@ -9,43 +9,57 @@ export const ProgressDashboard = () => {
   const yearlyProgress = [
     { year: "2020", models: 1, organizations: 1 },
     { year: "2021", models: 1, organizations: 1 },
-    { year: "2022", models: 2, organizations: 1 },
-    { year: "2023", models: 3, organizations: 2 },
-    { year: "2024", models: 9, organizations: 4 },
-    { year: "2025", models: 12, organizations: 5 }
+    { year: "2022", models: 3, organizations: 2 },
+    { year: "2023", models: 5, organizations: 3 },
+    { year: "2024", models: 15, organizations: 8 },
+    { year: "2025", models: 20, organizations: 12 }
   ];
 
   const organizationData = [
     { name: "AI4Bharat", models: 4, type: "Academic" },
-    { name: "Sarvam AI", models: 4, type: "Startup" },
+    { name: "Sarvam AI", models: 5, type: "Startup" },
     { name: "Krutrim Lab", models: 2, type: "Startup" },
+    { name: "CoRover.ai", models: 1, type: "Startup" },
+    { name: "Tech Mahindra", models: 1, type: "Corporate" },
     { name: "IIT Bombay", models: 1, type: "Academic" },
+    { name: "Telugu LLM Labs", models: 1, type: "Research" },
+    { name: "Gyan AI", models: 1, type: "Startup" },
+    { name: "Yellow.ai", models: 1, type: "Startup" },
+    { name: "Zoho", models: 1, type: "Corporate" },
+    { name: "Bhashini", models: 1, type: "Government" },
     { name: "BharatGen", models: 1, type: "Research" }
   ];
 
   const typeDistribution = [
-    { name: "Startups", value: 7, color: "#10B981" },
+    { name: "Startups", value: 11, color: "#10B981" },
     { name: "Academic", value: 5, color: "#3B82F6" },
-    { name: "Research", value: 1, color: "#8B5CF6" }
+    { name: "Corporate", value: 2, color: "#F59E0B" },
+    { name: "Research", value: 2, color: "#8B5CF6" },
+    { name: "Government", value: 1, color: "#EF4444" }
   ];
 
   const languageSupport = [
-    { language: "Hindi", models: 8 },
-    { language: "English", models: 12 },
-    { language: "Tamil", models: 6 },
-    { language: "Telugu", models: 6 },
-    { language: "Bengali", models: 5 },
-    { language: "Marathi", models: 5 }
+    { language: "Hindi", models: 15 },
+    { language: "English", models: 20 },
+    { language: "Tamil", models: 12 },
+    { language: "Telugu", models: 10 },
+    { language: "Bengali", models: 10 },
+    { language: "Marathi", models: 8 },
+    { language: "Kannada", models: 8 },
+    { language: "Gujarati", models: 7 }
   ];
 
   const milestones = [
     { title: "First Indian LLM", date: "Dec 2020", status: "completed" },
-    { title: "Multilingual Support", date: "Mar 2022", status: "completed" },
+    { title: "Government Initiative", date: "Jun 2022", status: "completed" },
     { title: "Commercial Models", date: "Dec 2023", status: "completed" },
     { title: "Unicorn Status", date: "Jan 2024", status: "completed" },
     { title: "Multimodal AI", date: "Feb 2024", status: "completed" },
-    { title: "Production Deployment", date: "Oct 2024", status: "completed" },
-    { title: "Next-Gen Models", date: "May 2025", status: "in-progress" }
+    { title: "Open Source Movement", date: "Mar 2024", status: "completed" },
+    { title: "Lightweight Models", date: "Jul 2024", status: "completed" },
+    { title: "Enterprise Solutions", date: "Oct 2024", status: "completed" },
+    { title: "Sovereign AI Initiative", date: "Mar 2025", status: "completed" },
+    { title: "Advanced Multimodal", date: "May 2025", status: "in-progress" }
   ];
 
   return (
@@ -66,7 +80,7 @@ export const ProgressDashboard = () => {
                 <BrainIcon className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">12+</p>
+                <p className="text-2xl font-bold text-gray-900">20+</p>
                 <p className="text-gray-600">Total Models</p>
               </div>
             </div>
@@ -80,7 +94,7 @@ export const ProgressDashboard = () => {
                 <BuildingIcon className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">5</p>
+                <p className="text-2xl font-bold text-gray-900">12</p>
                 <p className="text-gray-600">Organizations</p>
               </div>
             </div>
@@ -94,7 +108,7 @@ export const ProgressDashboard = () => {
                 <GlobeIcon className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">20+</p>
+                <p className="text-2xl font-bold text-gray-900">22+</p>
                 <p className="text-gray-600">Languages</p>
               </div>
             </div>
@@ -108,7 +122,7 @@ export const ProgressDashboard = () => {
                 <TrendingUpIcon className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">$91M+</p>
+                <p className="text-2xl font-bold text-gray-900">$200M+</p>
                 <p className="text-gray-600">Total Funding</p>
               </div>
             </div>
@@ -174,7 +188,7 @@ export const ProgressDashboard = () => {
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={organizationData}>
+              <BarChart data={organizationData.slice(0, 8)}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
                 <YAxis />

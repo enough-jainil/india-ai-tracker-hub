@@ -13,7 +13,7 @@ interface TimelineEvent {
   title: string;
   organization: string;
   description: string;
-  category: "LLM" | "Research" | "Startup" | "Partnership";
+  category: "LLM" | "Research" | "Startup" | "Partnership" | "Government";
   details: string[];
   website?: string;
 }
@@ -54,23 +54,56 @@ const timelineData: TimelineEvent[] = [
   },
   {
     id: "3",
+    date: "Jun 2022",
+    year: 2022,
+    month: "Jun",
+    title: "Bhashini Platform",
+    organization: "Government of India",
+    description: "Digital platform for AI-powered language services",
+    category: "Government",
+    details: [
+      "Automatic speech recognition",
+      "Translation services",
+      "Bridge digital divides",
+      "Support for all Indian languages"
+    ]
+  },
+  {
+    id: "4",
     date: "Dec 2023",
     year: 2023,
     month: "Dec",
     title: "OpenHathi",
     organization: "Sarvam AI",
-    description: "Large-scale Hindi language model",
+    description: "First Hindi LLM based on Llama2-7B",
     category: "LLM",
     details: [
       "7B parameter model",
-      "Focused on Hindi language",
-      "Open source initiative",
-      "Strong reasoning capabilities"
+      "Enhanced Indic language support",
+      "Real-world conversational fine-tuning",
+      "Open source initiative"
     ],
     website: "https://sarvam.ai"
   },
   {
-    id: "4",
+    id: "5",
+    date: "Dec 2023",
+    year: 2023,
+    month: "Dec",
+    title: "BharatGPT",
+    organization: "CoRover.ai",
+    description: "Government-backed multilingual LLM",
+    category: "LLM",
+    details: [
+      "12+ Indian languages for text",
+      "14 languages for voice",
+      "Integrated with IRCTC and NPCI",
+      "Government services focus"
+    ],
+    website: "https://bharatgpt.ai"
+  },
+  {
+    id: "6",
     date: "Jan 2024",
     year: 2024,
     month: "Jan",
@@ -86,40 +119,72 @@ const timelineData: TimelineEvent[] = [
     ]
   },
   {
-    id: "5",
+    id: "7",
     date: "Jan 2024",
     year: 2024,
     month: "Jan",
     title: "Krutrim-1",
     organization: "Krutrim Lab",
-    description: "Ola's ambitious AI language model",
+    description: "Multilingual LLM understanding 22 Indian languages",
     category: "LLM",
     details: [
-      "Supports 20+ Indian languages",
+      "Understands 22 Indian languages",
+      "Generates in 10 languages",
       "Commercial backing by Ola",
-      "Focus on Indian context",
       "Unicorn startup status"
     ],
     website: "https://krutrim.ai"
   },
   {
-    id: "6",
+    id: "8",
     date: "Feb 2024",
     year: 2024,
     month: "Feb",
-    title: "Hanooman",
-    organization: "IIT Bombay",
+    title: "Hanooman AI",
+    organization: "IIT Bombay & Reliance Jio",
     description: "Multimodal AI model for Indian languages",
     category: "LLM",
     details: [
-      "Supports text, speech, and video",
+      "Supports text, speech, and vision",
       "11 Indian languages",
       "Developed by BharatGPT consortium",
       "Academic-industry collaboration"
     ]
   },
   {
-    id: "7",
+    id: "9",
+    date: "Mar 2024",
+    year: 2024,
+    month: "Mar",
+    title: "Project Indus",
+    organization: "Tech Mahindra",
+    description: "Open-source LLM focused on Indic languages",
+    category: "LLM",
+    details: [
+      "Available on Hugging Face",
+      "Open source initiative",
+      "Tailored for local needs",
+      "Community-driven development"
+    ]
+  },
+  {
+    id: "10",
+    date: "Apr 2024",
+    year: 2024,
+    month: "Apr",
+    title: "Navarasa 2.0",
+    organization: "Telugu LLM Labs",
+    description: "Gemma 7B/2B instruction-tuned model",
+    category: "LLM",
+    details: [
+      "Supports 16 languages (15 Indian + English)",
+      "Includes Konkani, Marathi, Urdu, Assamese",
+      "Expanded from previous versions",
+      "Instruction-tuned capabilities"
+    ]
+  },
+  {
+    id: "11",
     date: "Jun 2024",
     year: 2024,
     month: "Jun",
@@ -135,7 +200,23 @@ const timelineData: TimelineEvent[] = [
     ]
   },
   {
-    id: "8",
+    id: "12",
+    date: "Jul 2024",
+    year: 2024,
+    month: "Jul",
+    title: "Paramanu",
+    organization: "Gyan AI",
+    description: "Lightweight LLMs optimized for Indian languages",
+    category: "LLM",
+    details: [
+      "13mn–367mn parameters",
+      "Assamese, Bangla, Hindi, Tamil support",
+      "Efficiency and transparency focused",
+      "Outperforms larger models in evaluations"
+    ]
+  },
+  {
+    id: "13",
     date: "Aug 2024",
     year: 2024,
     month: "Aug",
@@ -151,23 +232,55 @@ const timelineData: TimelineEvent[] = [
     ]
   },
   {
-    id: "9",
+    id: "14",
+    date: "Sep 2024",
+    year: 2024,
+    month: "Sep",
+    title: "YellowG",
+    organization: "Yellow.ai",
+    description: "Proprietary LLM for enterprise automation",
+    category: "LLM",
+    details: [
+      "Customer service bots",
+      "Voice assistants",
+      "Multiple Indian languages",
+      "Enterprise automation focus"
+    ]
+  },
+  {
+    id: "15",
     date: "Oct 2024",
     year: 2024,
     month: "Oct",
     title: "Sarvam-1",
     organization: "Sarvam AI",
-    description: "Production-ready Indian language model",
+    description: "India's first homegrown multilingual LLM",
     category: "LLM",
     details: [
-      "Enterprise-grade model",
+      "Trained from scratch",
       "API-first approach",
       "Multiple Indian languages",
       "Commercial deployment ready"
     ]
   },
   {
-    id: "10",
+    id: "16",
+    date: "Nov 2024",
+    year: 2024,
+    month: "Nov",
+    title: "Zoho Domain LLMs",
+    organization: "Zoho Corporation",
+    description: "Domain-specific LLMs for business",
+    category: "LLM",
+    details: [
+      "7–20 billion parameters",
+      "Business domain focused",
+      "Tailored for Indian enterprises",
+      "Multiple specialized models"
+    ]
+  },
+  {
+    id: "17",
     date: "Feb 2025",
     year: 2025,
     month: "Feb",
@@ -183,7 +296,23 @@ const timelineData: TimelineEvent[] = [
     ]
   },
   {
-    id: "11",
+    id: "18",
+    date: "Mar 2025",
+    year: 2025,
+    month: "Mar",
+    title: "Sovereign LLMs",
+    organization: "Sarvam AI (IndiaAI Mission)",
+    description: "Three sovereign Indian LLM variants",
+    category: "LLM",
+    details: [
+      "Sarvam-Large (advanced reasoning)",
+      "Sarvam-Small (real-time interaction)",
+      "Sarvam-Edge (on-device tasks)",
+      "IndiaAI Mission backing"
+    ]
+  },
+  {
+    id: "19",
     date: "May 2025",
     year: 2025,
     month: "May",
@@ -199,7 +328,7 @@ const timelineData: TimelineEvent[] = [
     ]
   },
   {
-    id: "12",
+    id: "20",
     date: "May 2025",
     year: 2025,
     month: "May",
@@ -242,6 +371,7 @@ export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) =>
       case "Research": return "bg-green-100 text-green-800";
       case "Startup": return "bg-purple-100 text-purple-800";
       case "Partnership": return "bg-orange-100 text-orange-800";
+      case "Government": return "bg-red-100 text-red-800";
       default: return "bg-gray-100 text-gray-800";
     }
   };
