@@ -1,0 +1,51 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# India AI Tracker Hub - Project Overview
+
+## Project Purpose
+This is an **India AI Tracker Hub** - a comprehensive platform tracking India's AI revolution. The project showcases:
+- 20+ Large Language Models (LLMs)
+- 8+ Text-to-Speech (TTS) models
+- 2+ Image generation models
+- 2+ Video generation models
+- 20+ organizations
+- Timeline coverage from 2020-2025
+
+## Tech Stack
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS + CSS animations
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **State Management**: React Query (@tanstack/react-query)
+- **Routing**: React Router DOM
+- **Icons**: Lucide React
+- **Charts**: Recharts
+- **Forms**: React Hook Form + Zod validation
+- **Themes**: next-themes for dark/light mode
+- **Notifications**: Sonner + shadcn/ui toasts
+
+## Project Structure
+- **Entry Point**: [main.tsx](mdc:src/main.tsx) renders the App component
+- **Main App**: [App.tsx](mdc:src/App.tsx) sets up routing, providers, and global components
+- **Pages**: [src/pages/](mdc:src/pages) contains route components
+  - [Index.tsx](mdc:src/pages/Index.tsx) - Main dashboard with tabs for Timeline, Organizations, and Progress
+  - [NotFound.tsx](mdc:src/pages/NotFound.tsx) - 404 page
+- **Components**: [src/components/](mdc:src/components) contains custom components
+  - [InteractiveTimeline.tsx](mdc:src/components/InteractiveTimeline.tsx) - Timeline visualization
+  - [CompanyProfiles.tsx](mdc:src/components/CompanyProfiles.tsx) - Organization profiles display
+  - [ProgressDashboard.tsx](mdc:src/components/ProgressDashboard.tsx) - Analytics and progress metrics
+- **UI Components**: [src/components/ui/](mdc:src/components/ui) contains shadcn/ui components
+- **Utilities**: [src/lib/utils.ts](mdc:src/lib/utils.ts) contains utility functions (cn for className merging)
+- **Hooks**: [src/hooks/](mdc:src/hooks) contains custom React hooks
+- **Styles**: [src/index.css](mdc:src/index.css) contains global styles and Tailwind imports
+
+## Development Setup
+- Package manager: npm (with optional Bun support)
+- Dev server: `npm run dev`
+- Build: `npm run build`
+- Linting: `npm run lint` (ESLint with React hooks plugin)
+- TypeScript configuration in [tsconfig.json](mdc:tsconfig.json) and [tsconfig.app.json](mdc:tsconfig.app.json)
+
