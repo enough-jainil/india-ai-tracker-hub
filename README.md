@@ -1,5 +1,7 @@
 # 🇮🇳 Indian AI Tracker
 
+![Indian AI Tracker](og-image.png)
+
 > **Comprehensive timeline of India's AI revolution (2020-2025)**
 
 A beautifully designed, interactive web application tracking the evolution of Indian artificial intelligence, featuring **20+ Large Language Models**, **8+ Text-to-Speech models**, **2+ Image Generation models**, and **2+ Video Generation models** across **20+ organizations**.
