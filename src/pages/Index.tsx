@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { InteractiveTimeline } from "@/components/InteractiveTimeline";
 import { CompanyProfiles } from "@/components/CompanyProfiles";
 import { ProgressDashboard } from "@/components/ProgressDashboard";
-import { SearchIcon, TrendingUpIcon, BrainIcon, CalendarIcon, MicIcon } from "lucide-react";
+import { SearchIcon, TrendingUpIcon, BrainIcon, CalendarIcon, MicIcon, ImageIcon, VideoIcon } from "lucide-react";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,7 +16,9 @@ const Index = () => {
   const stats = [
     { label: "LLMs", value: "20+", icon: BrainIcon, color: "bg-blue-500" },
     { label: "TTS Models", value: "8+", icon: MicIcon, color: "bg-purple-500" },
-    { label: "Organizations", value: "16", icon: TrendingUpIcon, color: "bg-green-500" },
+    { label: "Image Models", value: "2+", icon: ImageIcon, color: "bg-pink-500" },
+    { label: "Video Models", value: "2+", icon: VideoIcon, color: "bg-indigo-500" },
+    { label: "Organizations", value: "20+", icon: TrendingUpIcon, color: "bg-green-500" },
     { label: "Years Tracked", value: "5", icon: CalendarIcon, color: "bg-orange-500" },
   ];
 
@@ -30,7 +32,7 @@ const Index = () => {
               <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Indian AI Tracker
               </h1>
-              <p className="text-gray-600 mt-2">Comprehensive platform tracking India's AI revolution with 20+ LLMs and 8+ TTS models across 16+ organizations (2020-2025)</p>
+              <p className="text-gray-600 mt-2">Comprehensive platform tracking India's AI revolution with 20+ LLMs, 8+ TTS models, 2+ Image models, 2+ Video models across 20+ organizations (2020-2025)</p>
             </div>
             <div className="flex items-center space-x-4">
               <div className="relative">
@@ -49,7 +51,7 @@ const Index = () => {
 
       {/* Stats Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
           {stats.map((stat, index) => (
             <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6">
@@ -88,7 +90,7 @@ const Index = () => {
               <CardHeader>
                 <CardTitle className="text-2xl text-gray-900">Indian AI Timeline (2020-2025)</CardTitle>
                 <CardDescription>
-                  Interactive timeline showcasing the evolution of 20+ Large Language Models and 8+ Text-to-Speech models across 16+ organizations in India
+                  Interactive timeline showcasing the evolution of 20+ Large Language Models, 8+ Text-to-Speech models, 2+ Image models, and 2+ Video models across 20+ organizations in India
                 </CardDescription>
               </CardHeader>
               <CardContent>

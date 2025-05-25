@@ -3,51 +3,55 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
-import { TrendingUpIcon, BrainIcon, BuildingIcon, GlobeIcon, MicIcon } from "lucide-react";
+import { TrendingUpIcon, BrainIcon, BuildingIcon, GlobeIcon, MicIcon, ImageIcon, VideoIcon } from "lucide-react";
 
 export const ProgressDashboard = () => {
   const yearlyProgress = [
-    { year: "2020", llms: 1, tts: 0, organizations: 1 },
-    { year: "2021", llms: 1, tts: 1, organizations: 2 },
-    { year: "2022", llms: 3, tts: 3, organizations: 4 },
-    { year: "2023", llms: 5, tts: 4, organizations: 6 },
-    { year: "2024", llms: 15, tts: 6, organizations: 12 },
-    { year: "2025", llms: 20, tts: 8, organizations: 16 }
+    { year: "2020", llms: 1, tts: 0, image: 0, video: 0, organizations: 1 },
+    { year: "2021", llms: 1, tts: 1, image: 0, video: 0, organizations: 2 },
+    { year: "2022", llms: 3, tts: 3, image: 0, video: 0, organizations: 4 },
+    { year: "2023", llms: 5, tts: 4, image: 1, video: 1, organizations: 8 },
+    { year: "2024", llms: 15, tts: 6, image: 2, video: 2, organizations: 16 },
+    { year: "2025", llms: 20, tts: 8, image: 2, video: 2, organizations: 20 }
   ];
 
   const modelTypeDistribution = [
     { name: "LLMs", value: 20, color: "#3B82F6" },
-    { name: "TTS Models", value: 8, color: "#8B5CF6" }
+    { name: "TTS Models", value: 8, color: "#8B5CF6" },
+    { name: "Image Models", value: 2, color: "#EC4899" },
+    { name: "Video Models", value: 2, color: "#6366F1" }
   ];
 
   const organizationData = [
-    { name: "AI4Bharat", llms: 4, tts: 1, type: "Academic" },
-    { name: "Sarvam AI", llms: 5, tts: 2, type: "Startup" },
-    { name: "Krutrim Lab", llms: 2, tts: 0, type: "Startup" },
-    { name: "CoRover.ai", llms: 1, tts: 0, type: "Startup" },
-    { name: "Tech Mahindra", llms: 1, tts: 0, type: "Corporate" },
-    { name: "IIT Bombay", llms: 1, tts: 0, type: "Academic" },
-    { name: "C-DAC", llms: 0, tts: 3, type: "Government" },
-    { name: "IIT Madras", llms: 0, tts: 1, type: "Academic" }
+    { name: "AI4Bharat", llms: 4, tts: 1, image: 0, video: 1, type: "Academic" },
+    { name: "Sarvam AI", llms: 5, tts: 2, image: 0, video: 0, type: "Startup" },
+    { name: "Krutrim Lab", llms: 2, tts: 0, image: 0, video: 0, type: "Startup" },
+    { name: "CoRover.ai", llms: 1, tts: 0, image: 0, video: 1, type: "Startup" },
+    { name: "Tech Mahindra", llms: 1, tts: 0, image: 0, video: 0, type: "Corporate" },
+    { name: "IIT Bombay", llms: 1, tts: 0, image: 0, video: 0, type: "Academic" },
+    { name: "C-DAC", llms: 0, tts: 3, image: 0, video: 0, type: "Government" },
+    { name: "IIT Madras", llms: 0, tts: 1, image: 0, video: 0, type: "Academic" },
+    { name: "BharatDiffusion", llms: 0, tts: 0, image: 1, video: 0, type: "Startup" },
+    { name: "Fractal", llms: 0, tts: 0, image: 1, video: 0, type: "Corporate" }
   ];
 
   const typeDistribution = [
-    { name: "Startups", value: 13, color: "#10B981" },
-    { name: "Academic", value: 6, color: "#3B82F6" },
-    { name: "Corporate", value: 2, color: "#F59E0B" },
+    { name: "Startups", value: 15, color: "#10B981" },
+    { name: "Academic", value: 7, color: "#3B82F6" },
+    { name: "Corporate", value: 3, color: "#F59E0B" },
     { name: "Research", value: 2, color: "#8B5CF6" },
     { name: "Government", value: 3, color: "#EF4444" }
   ];
 
   const languageSupport = [
-    { language: "Hindi", models: 18 },
-    { language: "English", models: 28 },
-    { language: "Tamil", models: 15 },
-    { language: "Telugu", models: 12 },
-    { language: "Bengali", models: 12 },
-    { language: "Marathi", models: 10 },
-    { language: "Kannada", models: 10 },
-    { language: "Gujarati", models: 9 }
+    { language: "Hindi", models: 22 },
+    { language: "English", models: 32 },
+    { language: "Tamil", models: 18 },
+    { language: "Telugu", models: 15 },
+    { language: "Bengali", models: 15 },
+    { language: "Marathi", models: 13 },
+    { language: "Kannada", models: 13 },
+    { language: "Gujarati", models: 12 }
   ];
 
   const milestones = [
@@ -55,11 +59,15 @@ export const ProgressDashboard = () => {
     { title: "First TTS Models", date: "Jan 2021", status: "completed" },
     { title: "Government Initiative", date: "Jun 2022", status: "completed" },
     { title: "Commercial Models", date: "Dec 2023", status: "completed" },
+    { title: "First Image AI Model", date: "Jan 2023", status: "completed" },
+    { title: "First Video AI Model", date: "Mar 2023", status: "completed" },
     { title: "Unicorn Status", date: "Jan 2024", status: "completed" },
     { title: "Multimodal AI", date: "Feb 2024", status: "completed" },
     { title: "Advanced TTS (Bulbul)", date: "Aug 2024", status: "completed" },
+    { title: "BharatDiffusion Launch", date: "Sep 2024", status: "completed" },
     { title: "Lightweight Models", date: "Jul 2024", status: "completed" },
     { title: "Enterprise Solutions", date: "Oct 2024", status: "completed" },
+    { title: "Kalaido.ai Multi-language", date: "Nov 2024", status: "completed" },
     { title: "Sovereign AI Initiative", date: "Mar 2025", status: "completed" },
     { title: "Enhanced TTS v2", date: "Dec 2024", status: "completed" },
     { title: "Advanced Multimodal", date: "May 2025", status: "in-progress" }
@@ -70,12 +78,12 @@ export const ProgressDashboard = () => {
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Indian AI Progress Dashboard</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Comprehensive analytics and insights into India's LLM and TTS development journey
+          Comprehensive analytics and insights into India's LLM, TTS, Image, and Video AI development journey
         </p>
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-7 gap-6">
         <Card className="border-0 shadow-lg">
           <CardContent className="p-6">
             <div className="flex items-center space-x-4">
@@ -107,11 +115,39 @@ export const ProgressDashboard = () => {
         <Card className="border-0 shadow-lg">
           <CardContent className="p-6">
             <div className="flex items-center space-x-4">
+              <div className="p-3 rounded-lg bg-pink-500">
+                <ImageIcon className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-gray-900">2+</p>
+                <p className="text-gray-600">Image Models</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg">
+          <CardContent className="p-6">
+            <div className="flex items-center space-x-4">
+              <div className="p-3 rounded-lg bg-indigo-500">
+                <VideoIcon className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-gray-900">2+</p>
+                <p className="text-gray-600">Video Models</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg">
+          <CardContent className="p-6">
+            <div className="flex items-center space-x-4">
               <div className="p-3 rounded-lg bg-green-500">
                 <BuildingIcon className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">16</p>
+                <p className="text-2xl font-bold text-gray-900">20+</p>
                 <p className="text-gray-600">Organizations</p>
               </div>
             </div>
@@ -139,7 +175,7 @@ export const ProgressDashboard = () => {
                 <TrendingUpIcon className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-gray-900">$200M+</p>
+                <p className="text-2xl font-bold text-gray-900">$300M+</p>
                 <p className="text-gray-600">Total Funding</p>
               </div>
             </div>
@@ -153,7 +189,7 @@ export const ProgressDashboard = () => {
         <Card className="border-0 shadow-lg">
           <CardHeader>
             <CardTitle>Yearly AI Model Development</CardTitle>
-            <CardDescription>Growth in LLMs, TTS models and organizations over time</CardDescription>
+            <CardDescription>Growth in LLMs, TTS, Image, Video models and organizations over time</CardDescription>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -164,6 +200,8 @@ export const ProgressDashboard = () => {
                 <Tooltip />
                 <Line type="monotone" dataKey="llms" stroke="#3B82F6" strokeWidth={3} name="LLMs" />
                 <Line type="monotone" dataKey="tts" stroke="#8B5CF6" strokeWidth={3} name="TTS Models" />
+                <Line type="monotone" dataKey="image" stroke="#EC4899" strokeWidth={3} name="Image Models" />
+                <Line type="monotone" dataKey="video" stroke="#6366F1" strokeWidth={3} name="Video Models" />
                 <Line type="monotone" dataKey="organizations" stroke="#10B981" strokeWidth={3} name="Organizations" />
               </LineChart>
             </ResponsiveContainer>
@@ -174,7 +212,7 @@ export const ProgressDashboard = () => {
         <Card className="border-0 shadow-lg">
           <CardHeader>
             <CardTitle>AI Model Distribution</CardTitle>
-            <CardDescription>LLMs vs TTS models</CardDescription>
+            <CardDescription>LLMs vs TTS vs Image vs Video models</CardDescription>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -202,17 +240,19 @@ export const ProgressDashboard = () => {
         <Card className="border-0 shadow-lg">
           <CardHeader>
             <CardTitle>Models by Organization</CardTitle>
-            <CardDescription>LLMs and TTS models developed by each organization</CardDescription>
+            <CardDescription>All AI models developed by each organization</CardDescription>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={organizationData.slice(0, 8)}>
+              <BarChart data={organizationData.slice(0, 10)}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
                 <YAxis />
                 <Tooltip />
                 <Bar dataKey="llms" fill="#3B82F6" name="LLMs" />
                 <Bar dataKey="tts" fill="#8B5CF6" name="TTS Models" />
+                <Bar dataKey="image" fill="#EC4899" name="Image Models" />
+                <Bar dataKey="video" fill="#6366F1" name="Video Models" />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -251,7 +291,7 @@ export const ProgressDashboard = () => {
       <Card className="border-0 shadow-lg">
         <CardHeader>
           <CardTitle>Language Support Across All Models</CardTitle>
-          <CardDescription>Combined support from LLMs and TTS models</CardDescription>
+          <CardDescription>Combined support from LLMs, TTS, Image, and Video models</CardDescription>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={300}>
@@ -270,7 +310,7 @@ export const ProgressDashboard = () => {
       <Card className="border-0 shadow-lg">
         <CardHeader>
           <CardTitle>Development Milestones</CardTitle>
-          <CardDescription>Key achievements in Indian AI development (LLMs & TTS)</CardDescription>
+          <CardDescription>Key achievements in Indian AI development (LLMs, TTS, Image & Video models)</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
