@@ -1,73 +1,290 @@
-# Welcome to your Lovable project
+# 🇮🇳 Indian AI Tracker
 
-## Project info
+> **Comprehensive timeline of India's AI revolution (2020-2025)**
 
-**URL**: https://lovable.dev/projects/7016a8d2-ceee-4e48-8392-aaea13440700
+A beautifully designed, interactive web application tracking the evolution of Indian artificial intelligence, featuring **20+ Large Language Models**, **8+ Text-to-Speech models**, **2+ Image Generation models**, and **2+ Video Generation models** across **20+ organizations**.
 
-## How can I edit this code?
+## 🌟 Live Demo
 
-There are several ways of editing your application.
+🔗 **[Visit Indian AI Tracker](https://traceback.in/)**
 
-**Use Lovable**
+## 📋 Table of Contents
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7016a8d2-ceee-4e48-8392-aaea13440700) and start prompting.
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Project Structure](#-project-structure)
+- [SEO Optimizations](#-seo-optimizations)
+- [Contributing](#-contributing)
+- [Timeline Coverage](#-timeline-coverage)
+- [Organizations Tracked](#-organizations-tracked)
+- [License](#-license)
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+### 🎯 Core Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Interactive Timeline**: Chronological view of Indian AI milestones from 2020-2025
+- **Advanced Filtering**: Filter by year, AI model type (LLM, TTS, Image, Video)
+- **Organization Profiles**: Detailed information about 20+ Indian AI organizations
+- **Progress Dashboard**: Visual analytics and insights
+- **Real-time Search**: Search across organizations, models, and descriptions
+- **Mobile Responsive**: Optimized for all devices and screen sizes
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🔍 Content Categories
 
-Follow these steps:
+- **🧠 Large Language Models (LLMs)**: IndicBERT, Krutrim, BharatGPT, Sarvam AI models
+- **🎤 Text-to-Speech (TTS)**: Bulbul, AI4Bharat TTS, C-DAC GIST systems
+- **🎨 Image Generation**: BharatDiffusion, Kalaido.ai
+- **🎬 Video Generation**: Chitralekha, BharatGPT Video
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 🚀 Technical Features
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **SEO Optimized**: Complete meta tags, structured data, sitemap
+- **Performance Optimized**: Fast loading, mobile-first design
+- **Accessibility**: WCAG compliant, screen reader friendly
+- **Progressive Enhancement**: Works without JavaScript
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🛠️ Tech Stack
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Frontend
+
+- **React 18** - Modern React with hooks
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+
+### UI Components
+
+- **Shadcn/ui** - Modern React component library
+- **Lucide React** - Beautiful icon library
+- **Radix UI** - Accessible component primitives
+
+### State Management & Data
+
+- **TanStack Query** - Server state management
+- **React Router** - Client-side routing
+- **Custom Hooks** - Reusable logic
+
+### Development Tools
+
+- **ESLint** - Code linting
+- **PostCSS** - CSS processing
+- **TypeScript** - Static type checking
+
+## 🚀 Installation
+
+### Prerequisites
+
+- **Node.js** 18+
+- **npm** or **yarn** or **bun**
+
+### Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/indian-ai-tracker.git
+cd indian-ai-tracker
+
+# Install dependencies
+npm install
+# or
+yarn install
+# or
+bun install
+
+# Start development server
 npm run dev
+# or
+yarn dev
+# or
+bun dev
+
+# Open http://localhost:5173 in your browser
 ```
 
-**Edit a file directly in GitHub**
+### Build for Production
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Build the application
+npm run build
+# or
+yarn build
+# or
+bun run build
 
-**Use GitHub Codespaces**
+# Preview production build
+npm run preview
+# or
+yarn preview
+# or
+bun run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📖 Usage
 
-## What technologies are used for this project?
+### Navigation
 
-This project is built with:
+1. **Timeline View**: Browse chronological AI developments
+2. **Organizations**: Explore detailed company profiles
+3. **Dashboard**: View analytics and progress metrics
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Filtering & Search
 
-## How can I deploy this project?
+- Use **year filters** to focus on specific time periods
+- Apply **category filters** to see only LLMs, TTS, Image, or Video models
+- **Search bar** finds organizations, models, and descriptions instantly
 
-Simply open [Lovable](https://lovable.dev/projects/7016a8d2-ceee-4e48-8392-aaea13440700) and click on Share -> Publish.
+### Interactive Features
 
-## Can I connect a custom domain to my Lovable project?
+- Click on timeline events to expand detailed information
+- Filter combinations for precise exploration
+- Mobile-optimized touch interactions
 
-Yes, you can!
+## 📁 Project Structure
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```
+indian-ai-tracker/
+├── public/
+│   ├── sitemap.xml          # SEO sitemap
+│   ├── robots.txt           # Search engine directives
+│   └── favicon.ico          # Site favicon
+├── src/
+│   ├── components/
+│   │   ├── ui/              # Reusable UI components
+│   │   ├── InteractiveTimeline.tsx
+│   │   ├── CompanyProfiles.tsx
+│   │   └── ProgressDashboard.tsx
+│   ├── hooks/               # Custom React hooks
+│   ├── lib/                 # Utility functions
+│   ├── pages/
+│   │   ├── Index.tsx        # Main page component
+│   │   └── NotFound.tsx     # 404 page
+│   ├── App.tsx              # Root application component
+│   ├── main.tsx             # Application entry point
+│   └── index.css            # Global styles
+├── index.html               # HTML template with SEO meta
+├── package.json             # Dependencies and scripts
+├── tailwind.config.ts       # Tailwind configuration
+├── tsconfig.json            # TypeScript configuration
+└── vite.config.ts           # Vite configuration
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🔍 SEO Optimizations
+
+### Meta Tags & Social Sharing
+
+- **Complete meta tags** for search engines
+- **Open Graph** tags for Facebook/LinkedIn sharing
+- **Twitter Cards** for Twitter sharing
+- **Structured data** (JSON-LD) for rich snippets
+
+### Technical SEO
+
+- **XML Sitemap** (`/sitemap.xml`)
+- **Robots.txt** with proper directives
+- **Canonical URLs** to prevent duplicate content
+- **Mobile-first responsive design**
+- **Fast loading** with optimized assets
+
+### Content SEO
+
+- **Semantic HTML** structure
+- **Proper heading hierarchy** (H1 → H2 → H3)
+- **Alt text ready** for images
+- **Search-friendly URLs**
+
+## 📊 Timeline Coverage
+
+### 🗓️ Years Tracked
+
+- **2020-2025**: Complete timeline of Indian AI evolution
+- **Real-time updates**: Latest developments added regularly
+
+### 📈 Model Categories
+
+| Category  | Count | Examples                                |
+| --------- | ----- | --------------------------------------- |
+| **LLMs**  | 20+   | Krutrim, BharatGPT, Sarvam-1, IndicBERT |
+| **TTS**   | 8+    | Bulbul, AI4Bharat TTS, C-DAC GIST       |
+| **Image** | 2+    | BharatDiffusion, Kalaido.ai             |
+| **Video** | 2+    | Chitralekha, BharatGPT Video            |
+
+## 🏢 Organizations Tracked
+
+### Leading Companies & Institutions
+
+- **Krutrim Lab** (Ola's AI subsidiary)
+- **Sarvam AI** (India's AI unicorn)
+- **AI4Bharat** (IIT Madras initiative)
+- **CoRover.ai** (BharatGPT creators)
+- **Tech Mahindra** (Project Indus)
+- **IIT Bombay & Reliance Jio** (Hanooman AI)
+- **Government of India** (Bhashini Platform)
+- **C-DAC** (Hindi TTS systems)
+- **Fractal** (Kalaido.ai)
+- **Yellow.ai** (YellowG)
+- **Zoho Corporation** (Domain LLMs)
+- ...and many more!
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+### 📝 Content Contributions
+
+- **Add new AI models** or organizations
+- **Update existing information**
+- **Improve descriptions** and details
+- **Suggest new features**
+
+### 🔧 Technical Contributions
+
+- **Bug fixes** and improvements
+- **Performance optimizations**
+- **New features** and components
+- **Documentation** improvements
+
+### Getting Started
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+### 📋 Contribution Guidelines
+
+- Follow the existing code style and conventions
+- Add TypeScript types for new components
+- Update documentation for new features
+- Test on multiple devices and browsers
+- Follow semantic commit message format
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **AI4Bharat** for pioneering Indian language AI research
+- **All the organizations** building India's AI ecosystem
+- **Open source community** for amazing tools and libraries
+- **Contributors** who help improve this project
+
+## 📞 Contact & Support
+
+- **Website**: [https://traceback.in/](https://traceback.in/)
+- **Issues**: [GitHub Issues](https://github.com/yourusername/indian-ai-tracker/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/indian-ai-tracker/discussions)
+
+---
+
+<div align="center">
+
+**Made with ❤️ for India's AI community**
+
+⭐ **Star this repo** if you find it useful!
+
+</div>
