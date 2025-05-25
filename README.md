@@ -1,6 +1,6 @@
 # 🇮🇳 Indian AI Tracker
 
-![Indian AI Tracker](og-image.png)
+![Indian AI Tracker](./public/og-image.png)
 
 > **Comprehensive timeline of India's AI revolution (2020-2025)**
 
