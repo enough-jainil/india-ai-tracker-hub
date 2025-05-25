@@ -8,15 +8,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { InteractiveTimeline } from "@/components/InteractiveTimeline";
 import { CompanyProfiles } from "@/components/CompanyProfiles";
 import { ProgressDashboard } from "@/components/ProgressDashboard";
-import { SearchIcon, TrendingUpIcon, BrainIcon, CalendarIcon } from "lucide-react";
+import { SearchIcon, TrendingUpIcon, BrainIcon, CalendarIcon, MicIcon } from "lucide-react";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const stats = [
-    { label: "Total LLMs", value: "20+", icon: BrainIcon, color: "bg-blue-500" },
-    { label: "Organizations", value: "12", icon: TrendingUpIcon, color: "bg-green-500" },
-    { label: "Years Tracked", value: "5", icon: CalendarIcon, color: "bg-purple-500" },
+    { label: "LLMs", value: "20+", icon: BrainIcon, color: "bg-blue-500" },
+    { label: "TTS Models", value: "8+", icon: MicIcon, color: "bg-purple-500" },
+    { label: "Organizations", value: "16", icon: TrendingUpIcon, color: "bg-green-500" },
+    { label: "Years Tracked", value: "5", icon: CalendarIcon, color: "bg-orange-500" },
   ];
 
   return (
@@ -29,7 +30,7 @@ const Index = () => {
               <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Indian AI Tracker
               </h1>
-              <p className="text-gray-600 mt-2">Comprehensive platform tracking India's AI revolution with 20+ models across 12+ organizations (2020-2025)</p>
+              <p className="text-gray-600 mt-2">Comprehensive platform tracking India's AI revolution with 20+ LLMs and 8+ TTS models across 16+ organizations (2020-2025)</p>
             </div>
             <div className="flex items-center space-x-4">
               <div className="relative">
@@ -48,7 +49,7 @@ const Index = () => {
 
       {/* Stats Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6">
@@ -85,9 +86,9 @@ const Index = () => {
           <TabsContent value="timeline" className="space-y-6">
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl text-gray-900">Indian LLMs Timeline (2020-2025)</CardTitle>
+                <CardTitle className="text-2xl text-gray-900">Indian AI Timeline (2020-2025)</CardTitle>
                 <CardDescription>
-                  Interactive timeline showcasing the evolution of 20+ Large Language Models across 12+ organizations in India
+                  Interactive timeline showcasing the evolution of 20+ Large Language Models and 8+ Text-to-Speech models across 16+ organizations in India
                 </CardDescription>
               </CardHeader>
               <CardContent>

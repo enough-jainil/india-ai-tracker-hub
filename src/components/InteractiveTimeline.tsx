@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CalendarIcon, ExternalLinkIcon, BrainIcon } from "lucide-react";
+import { CalendarIcon, ExternalLinkIcon, BrainIcon, MicIcon } from "lucide-react";
 
 interface TimelineEvent {
   id: string;
@@ -13,7 +12,7 @@ interface TimelineEvent {
   title: string;
   organization: string;
   description: string;
-  category: "LLM" | "Research" | "Startup" | "Partnership" | "Government";
+  category: "LLM" | "TTS" | "Research" | "Startup" | "Partnership" | "Government";
   details: string[];
   website?: string;
 }
@@ -342,6 +341,142 @@ const timelineData: TimelineEvent[] = [
       "State-of-the-art performance",
       "Research breakthrough"
     ]
+  },
+  {
+    id: "21",
+    date: "Jan 2021",
+    year: 2021,
+    month: "Jan",
+    title: "C-DAC GIST Hindi TTS",
+    organization: "C-DAC",
+    description: "Comprehensive Hindi TTS system with multiple architectures",
+    category: "TTS",
+    details: [
+      "Limited Domain TTS",
+      "Generic Hybrid TTS (diphones + recorded words)",
+      "Tiny TTS for embedded devices",
+      "Adaptable architecture for other Indian languages"
+    ],
+    website: "https://cdac.in"
+  },
+  {
+    id: "22",
+    date: "Mar 2022",
+    year: 2022,
+    month: "Mar",
+    title: "AI4Bharat Indic-TTS",
+    organization: "AI4Bharat",
+    description: "Open-source TTS models for 13 Indian languages",
+    category: "TTS",
+    details: [
+      "FastPitch and HiFi-GAN architectures",
+      "High-quality, natural-sounding speech",
+      "Available on Bhashini platform",
+      "Supports Assamese, Bengali, Hindi, Tamil, Telugu, etc."
+    ],
+    website: "https://github.com/AI4Bharat/Indic-TTS"
+  },
+  {
+    id: "23",
+    date: "Jun 2022",
+    year: 2022,
+    month: "Jun",
+    title: "IIT Madras Indic TTS Consortium",
+    organization: "IIT Madras",
+    description: "Collaborative TTS project for 22 Indian languages",
+    category: "TTS",
+    details: [
+      "23 institutions collaboration",
+      "High-quality synthesis focus",
+      "Small-footprint models",
+      "Accessibility and education applications"
+    ],
+    website: "https://www.iitm.ac.in/donlab/indictts"
+  },
+  {
+    id: "24",
+    date: "Sep 2023",
+    year: 2023,
+    month: "Sep",
+    title: "SYSPIN TTS",
+    organization: "IISc Bangalore",
+    description: "Large corpora and TTS models for 9 Indian languages",
+    category: "TTS",
+    details: [
+      "Open-source initiative",
+      "Large corpus development",
+      "Resource gap reduction",
+      "Speech technology advancement"
+    ],
+    website: "https://syspin.iisc.ac.in"
+  },
+  {
+    id: "25",
+    date: "Jan 2024",
+    year: 2024,
+    month: "Jan",
+    title: "Indian TTS Platform",
+    organization: "Indian TTS",
+    description: "Commercial TTS services for 12 Indian languages",
+    category: "TTS",
+    details: [
+      "Online and offline voice synthesis",
+      "IVR integration",
+      "Screen reader support",
+      "Accessibility focus for visually impaired"
+    ],
+    website: "https://indiantts.com"
+  },
+  {
+    id: "26",
+    date: "Mar 2024",
+    year: 2024,
+    month: "Mar",
+    title: "AIKosh TTS",
+    organization: "AIKosh",
+    description: "Multi-language TTS with accessibility focus",
+    category: "TTS",
+    details: [
+      "Multiple Indian languages support",
+      "Accessibility-focused design",
+      "Speech synthesis applications",
+      "Government AI initiative"
+    ],
+    website: "https://aikosh.indiaai.gov.in"
+  },
+  {
+    id: "27",
+    date: "Aug 2024",
+    year: 2024,
+    month: "Aug",
+    title: "Bulbul-v1",
+    organization: "Sarvam AI",
+    description: "Advanced TTS model for 11 Indian languages",
+    category: "TTS",
+    details: [
+      "Natural, expressive voices",
+      "Real-time synthesis capability",
+      "Code-mixed language support",
+      "Hindi, Marathi, Tamil, Telugu, Bengali support"
+    ],
+    website: "https://www.sarvam.ai/apis/text-to-speech"
+  },
+  {
+    id: "28",
+    date: "Dec 2024",
+    year: 2024,
+    month: "Dec",
+    title: "Bulbul-v2",
+    organization: "Sarvam AI",
+    description: "Enhanced TTS with fine-grained voice control",
+    category: "TTS",
+    details: [
+      "Improved voice quality",
+      "Fine-grained voice control",
+      "Scalable business applications",
+      "Enhanced expressiveness"
+    ],
+    website: "https://www.sarvam.ai/apis/text-to-speech"
   }
 ];
 
@@ -352,51 +487,87 @@ interface InteractiveTimelineProps {
 export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) => {
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const filteredData = timelineData.filter(event =>
-    event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    event.organization.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    event.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredData = timelineData.filter(event => {
+    const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      event.organization.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      event.description.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    const matchesYear = selectedYear ? event.year === selectedYear : true;
+    const matchesCategory = selectedCategory ? event.category === selectedCategory : true;
+    
+    return matchesSearch && matchesYear && matchesCategory;
+  });
 
-  const years = Array.from(new Set(filteredData.map(event => event.year))).sort();
-  
-  const displayData = selectedYear 
-    ? filteredData.filter(event => event.year === selectedYear)
-    : filteredData;
+  const years = Array.from(new Set(timelineData.map(event => event.year))).sort();
+  const categories = ["LLM", "TTS", "Government", "Research"];
 
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "LLM": return "bg-blue-100 text-blue-800";
+      case "TTS": return "bg-purple-100 text-purple-800";
       case "Research": return "bg-green-100 text-green-800";
-      case "Startup": return "bg-purple-100 text-purple-800";
-      case "Partnership": return "bg-orange-100 text-orange-800";
+      case "Startup": return "bg-orange-100 text-orange-800";
+      case "Partnership": return "bg-yellow-100 text-yellow-800";
       case "Government": return "bg-red-100 text-red-800";
       default: return "bg-gray-100 text-gray-800";
     }
   };
 
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "TTS": return MicIcon;
+      default: return BrainIcon;
+    }
+  };
+
   return (
     <div className="space-y-6">
-      {/* Year Filter */}
-      <div className="flex flex-wrap gap-2">
-        <Button
-          variant={selectedYear === null ? "default" : "outline"}
-          onClick={() => setSelectedYear(null)}
-          className="rounded-full"
-        >
-          All Years
-        </Button>
-        {years.map(year => (
+      {/* Filters */}
+      <div className="space-y-4">
+        {/* Year Filter */}
+        <div className="flex flex-wrap gap-2">
           <Button
-            key={year}
-            variant={selectedYear === year ? "default" : "outline"}
-            onClick={() => setSelectedYear(year)}
+            variant={selectedYear === null ? "default" : "outline"}
+            onClick={() => setSelectedYear(null)}
             className="rounded-full"
           >
-            {year}
+            All Years
           </Button>
-        ))}
+          {years.map(year => (
+            <Button
+              key={year}
+              variant={selectedYear === year ? "default" : "outline"}
+              onClick={() => setSelectedYear(year)}
+              className="rounded-full"
+            >
+              {year}
+            </Button>
+          ))}
+        </div>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap gap-2">
+          <Button
+            variant={selectedCategory === null ? "default" : "outline"}
+            onClick={() => setSelectedCategory(null)}
+            className="rounded-full"
+          >
+            All Types
+          </Button>
+          {categories.map(category => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              onClick={() => setSelectedCategory(category)}
+              className="rounded-full"
+            >
+              {category === "LLM" ? "Large Language Models" : 
+               category === "TTS" ? "Text-to-Speech" : category}
+            </Button>
+          ))}
+        </div>
       </div>
 
       {/* Timeline */}
@@ -404,62 +575,70 @@ export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) =>
         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
         
         <div className="space-y-8">
-          {displayData.map((event, index) => (
-            <div key={event.id} className="relative flex items-start space-x-6">
-              <div className="flex-shrink-0 w-16 h-16 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                <BrainIcon className="w-6 h-6 text-blue-500" />
-              </div>
-              
-              <Card 
-                className={`flex-1 border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${
-                  selectedEvent?.id === event.id ? 'ring-2 ring-blue-500' : ''
-                }`}
-                onClick={() => setSelectedEvent(selectedEvent?.id === event.id ? null : event)}
-              >
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <CalendarIcon className="w-4 h-4 text-gray-500" />
-                        <span className="text-sm text-gray-500 font-medium">{event.date}</span>
-                        <Badge className={getCategoryColor(event.category)}>
-                          {event.category}
-                        </Badge>
+          {filteredData.map((event, index) => {
+            const IconComponent = getCategoryIcon(event.category);
+            return (
+              <div key={event.id} className="relative flex items-start space-x-6">
+                <div className={`flex-shrink-0 w-16 h-16 bg-white border-4 ${
+                  event.category === "TTS" ? "border-purple-500" : "border-blue-500"
+                } rounded-full flex items-center justify-center shadow-lg`}>
+                  <IconComponent className={`w-6 h-6 ${
+                    event.category === "TTS" ? "text-purple-500" : "text-blue-500"
+                  }`} />
+                </div>
+                
+                <Card 
+                  className={`flex-1 border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${
+                    selectedEvent?.id === event.id ? 'ring-2 ring-blue-500' : ''
+                  }`}
+                  onClick={() => setSelectedEvent(selectedEvent?.id === event.id ? null : event)}
+                >
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <CalendarIcon className="w-4 h-4 text-gray-500" />
+                          <span className="text-sm text-gray-500 font-medium">{event.date}</span>
+                          <Badge className={getCategoryColor(event.category)}>
+                            {event.category === "LLM" ? "Large Language Model" : 
+                             event.category === "TTS" ? "Text-to-Speech" : event.category}
+                          </Badge>
+                        </div>
+                        <CardTitle className="text-xl text-gray-900">{event.title}</CardTitle>
+                        <CardDescription className="text-blue-600 font-medium">
+                          {event.organization}
+                        </CardDescription>
                       </div>
-                      <CardTitle className="text-xl text-gray-900">{event.title}</CardTitle>
-                      <CardDescription className="text-blue-600 font-medium">
-                        {event.organization}
-                      </CardDescription>
+                      {event.website && (
+                        <Button variant="ghost" size="sm" asChild>
+                          <a href={event.website} target="_blank" rel="noopener noreferrer">
+                            <ExternalLinkIcon className="w-4 h-4" />
+                          </a>
+                        </Button>
+                      )}
                     </div>
-                    {event.website && (
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={event.website} target="_blank" rel="noopener noreferrer">
-                          <ExternalLinkIcon className="w-4 h-4" />
-                        </a>
-                      </Button>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 mb-4">{event.description}</p>
+                    
+                    {selectedEvent?.id === event.id && (
+                      <div className="space-y-3 pt-4 border-t border-gray-200">
+                        <h4 className="font-semibold text-gray-900">Key Features:</h4>
+                        <ul className="space-y-2">
+                          {event.details.map((detail, idx) => (
+                            <li key={idx} className="flex items-start space-x-2">
+                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-600">{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700 mb-4">{event.description}</p>
-                  
-                  {selectedEvent?.id === event.id && (
-                    <div className="space-y-3 pt-4 border-t border-gray-200">
-                      <h4 className="font-semibold text-gray-900">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {event.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-600">{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </div>
-          ))}
+                  </CardContent>
+                </Card>
+              </div>
+            );
+          })}
         </div>
       </div>
 
