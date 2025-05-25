@@ -84,8 +84,8 @@ A beautifully designed, interactive web application tracking the evolution of In
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/indian-ai-tracker.git
-cd indian-ai-tracker
+git clone https://github.com/enough-jainil/india-ai-tracker-hub.git
+cd india-ai-tracker-hub
 
 # Install dependencies
 npm install
@@ -276,8 +276,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📞 Contact & Support
 
 - **Website**: [https://traceback.in/](https://traceback.in/)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/indian-ai-tracker/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/indian-ai-tracker/discussions)
+- **Issues**: [GitHub Issues](https://github.com/enough-jainil/india-ai-tracker-hub/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/enough-jainil/india-ai-tracker-hub/discussions)
+- **X (Twitter)**: [@algogist](https://x.com/algogist)
 
 ---
 

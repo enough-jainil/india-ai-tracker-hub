@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { InteractiveTimeline } from "@/components/InteractiveTimeline";
 import { CompanyProfiles } from "@/components/CompanyProfiles";
 import { ProgressDashboard } from "@/components/ProgressDashboard";
+import Footer from "@/components/Footer";
 import {
   SearchIcon,
   TrendingUpIcon,
@@ -175,6 +176,7 @@ const Index = () => {
           </TabsContent>
         </Tabs>
       </main>
+      <Footer />
     </div>
   );
 };
