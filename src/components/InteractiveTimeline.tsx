@@ -1,8 +1,21 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CalendarIcon, ExternalLinkIcon, BrainIcon, MicIcon, ImageIcon, VideoIcon } from "lucide-react";
+import {
+  CalendarIcon,
+  ExternalLinkIcon,
+  BrainIcon,
+  MicIcon,
+  ImageIcon,
+  VideoIcon,
+} from "lucide-react";
 
 interface TimelineEvent {
   id: string;
@@ -12,7 +25,15 @@ interface TimelineEvent {
   title: string;
   organization: string;
   description: string;
-  category: "LLM" | "TTS" | "Image" | "Video" | "Research" | "Startup" | "Partnership" | "Government";
+  category:
+    | "LLM"
+    | "TTS"
+    | "Image"
+    | "Video"
+    | "Research"
+    | "Startup"
+    | "Partnership"
+    | "Government";
   details: string[];
   website?: string;
 }
@@ -31,9 +52,9 @@ const timelineData: TimelineEvent[] = [
       "Supports 12 Indian languages",
       "Built on BERT architecture",
       "Open source model",
-      "Released by IIT Madras team"
+      "Released by IIT Madras team",
     ],
-    website: "https://ai4bharat.org"
+    website: "https://ai4bharat.org",
   },
   {
     id: "2",
@@ -48,8 +69,8 @@ const timelineData: TimelineEvent[] = [
       "Improved upon IndicBERT",
       "Better text generation capabilities",
       "Enhanced multilingual support",
-      "Used for translation tasks"
-    ]
+      "Used for translation tasks",
+    ],
   },
   {
     id: "3",
@@ -64,8 +85,8 @@ const timelineData: TimelineEvent[] = [
       "Automatic speech recognition",
       "Translation services",
       "Bridge digital divides",
-      "Support for all Indian languages"
-    ]
+      "Support for all Indian languages",
+    ],
   },
   {
     id: "4",
@@ -80,9 +101,9 @@ const timelineData: TimelineEvent[] = [
       "7B parameter model",
       "Enhanced Indic language support",
       "Real-world conversational fine-tuning",
-      "Open source initiative"
+      "Open source initiative",
     ],
-    website: "https://sarvam.ai"
+    website: "https://sarvam.ai",
   },
   {
     id: "5",
@@ -97,9 +118,9 @@ const timelineData: TimelineEvent[] = [
       "12+ Indian languages for text",
       "14 languages for voice",
       "Integrated with IRCTC and NPCI",
-      "Government services focus"
+      "Government services focus",
     ],
-    website: "https://bharatgpt.ai"
+    website: "https://bharatgpt.ai",
   },
   {
     id: "6",
@@ -114,8 +135,8 @@ const timelineData: TimelineEvent[] = [
       "Fine-tuned for instruction following",
       "Supports multiple Indian languages",
       "Enhanced conversational abilities",
-      "Community-driven development"
-    ]
+      "Community-driven development",
+    ],
   },
   {
     id: "7",
@@ -130,9 +151,9 @@ const timelineData: TimelineEvent[] = [
       "Understands 22 Indian languages",
       "Generates in 10 languages",
       "Commercial backing by Ola",
-      "Unicorn startup status"
+      "Unicorn startup status",
     ],
-    website: "https://krutrim.ai"
+    website: "https://krutrim.ai",
   },
   {
     id: "8",
@@ -147,8 +168,8 @@ const timelineData: TimelineEvent[] = [
       "Supports text, speech, and vision",
       "11 Indian languages",
       "Developed by BharatGPT consortium",
-      "Academic-industry collaboration"
-    ]
+      "Academic-industry collaboration",
+    ],
   },
   {
     id: "9",
@@ -163,8 +184,8 @@ const timelineData: TimelineEvent[] = [
       "Available on Hugging Face",
       "Open source initiative",
       "Tailored for local needs",
-      "Community-driven development"
-    ]
+      "Community-driven development",
+    ],
   },
   {
     id: "10",
@@ -179,8 +200,8 @@ const timelineData: TimelineEvent[] = [
       "Supports 16 languages (15 Indian + English)",
       "Includes Konkani, Marathi, Urdu, Assamese",
       "Expanded from previous versions",
-      "Instruction-tuned capabilities"
-    ]
+      "Instruction-tuned capabilities",
+    ],
   },
   {
     id: "11",
@@ -195,8 +216,8 @@ const timelineData: TimelineEvent[] = [
       "Handles romanized Indian text",
       "Code-mixed language support",
       "Social media text processing",
-      "Transliteration capabilities"
-    ]
+      "Transliteration capabilities",
+    ],
   },
   {
     id: "12",
@@ -211,8 +232,8 @@ const timelineData: TimelineEvent[] = [
       "13mn–367mn parameters",
       "Assamese, Bangla, Hindi, Tamil support",
       "Efficiency and transparency focused",
-      "Outperforms larger models in evaluations"
-    ]
+      "Outperforms larger models in evaluations",
+    ],
   },
   {
     id: "13",
@@ -227,8 +248,8 @@ const timelineData: TimelineEvent[] = [
       "2B parameter efficient model",
       "Optimized for mobile devices",
       "Fast inference capabilities",
-      "Edge deployment ready"
-    ]
+      "Edge deployment ready",
+    ],
   },
   {
     id: "14",
@@ -243,8 +264,8 @@ const timelineData: TimelineEvent[] = [
       "Customer service bots",
       "Voice assistants",
       "Multiple Indian languages",
-      "Enterprise automation focus"
-    ]
+      "Enterprise automation focus",
+    ],
   },
   {
     id: "15",
@@ -259,8 +280,8 @@ const timelineData: TimelineEvent[] = [
       "Trained from scratch",
       "API-first approach",
       "Multiple Indian languages",
-      "Commercial deployment ready"
-    ]
+      "Commercial deployment ready",
+    ],
   },
   {
     id: "16",
@@ -275,8 +296,8 @@ const timelineData: TimelineEvent[] = [
       "7–20 billion parameters",
       "Business domain focused",
       "Tailored for Indian enterprises",
-      "Multiple specialized models"
-    ]
+      "Multiple specialized models",
+    ],
   },
   {
     id: "17",
@@ -291,8 +312,8 @@ const timelineData: TimelineEvent[] = [
       "Enhanced capabilities",
       "Improved language support",
       "Better reasoning abilities",
-      "Expanded training data"
-    ]
+      "Expanded training data",
+    ],
   },
   {
     id: "18",
@@ -307,8 +328,8 @@ const timelineData: TimelineEvent[] = [
       "Sarvam-Large (advanced reasoning)",
       "Sarvam-Small (real-time interaction)",
       "Sarvam-Edge (on-device tasks)",
-      "IndiaAI Mission backing"
-    ]
+      "IndiaAI Mission backing",
+    ],
   },
   {
     id: "19",
@@ -323,8 +344,8 @@ const timelineData: TimelineEvent[] = [
       "Text, image, and audio support",
       "Cross-modal understanding",
       "Enhanced reasoning",
-      "Production deployment"
-    ]
+      "Production deployment",
+    ],
   },
   {
     id: "20",
@@ -339,8 +360,8 @@ const timelineData: TimelineEvent[] = [
       "Advanced architecture",
       "Comprehensive Indian language support",
       "State-of-the-art performance",
-      "Research breakthrough"
-    ]
+      "Research breakthrough",
+    ],
   },
   {
     id: "21",
@@ -355,9 +376,9 @@ const timelineData: TimelineEvent[] = [
       "Limited Domain TTS",
       "Generic Hybrid TTS (diphones + recorded words)",
       "Tiny TTS for embedded devices",
-      "Adaptable architecture for other Indian languages"
+      "Adaptable architecture for other Indian languages",
     ],
-    website: "https://cdac.in"
+    website: "https://cdac.in",
   },
   {
     id: "22",
@@ -372,9 +393,9 @@ const timelineData: TimelineEvent[] = [
       "FastPitch and HiFi-GAN architectures",
       "High-quality, natural-sounding speech",
       "Available on Bhashini platform",
-      "Supports Assamese, Bengali, Hindi, Tamil, Telugu, etc."
+      "Supports Assamese, Bengali, Hindi, Tamil, Telugu, etc.",
     ],
-    website: "https://github.com/AI4Bharat/Indic-TTS"
+    website: "https://github.com/AI4Bharat/Indic-TTS",
   },
   {
     id: "23",
@@ -389,9 +410,9 @@ const timelineData: TimelineEvent[] = [
       "23 institutions collaboration",
       "High-quality synthesis focus",
       "Small-footprint models",
-      "Accessibility and education applications"
+      "Accessibility and education applications",
     ],
-    website: "https://www.iitm.ac.in/donlab/indictts"
+    website: "https://www.iitm.ac.in/donlab/indictts",
   },
   {
     id: "24",
@@ -406,9 +427,9 @@ const timelineData: TimelineEvent[] = [
       "Open-source initiative",
       "Large corpus development",
       "Resource gap reduction",
-      "Speech technology advancement"
+      "Speech technology advancement",
     ],
-    website: "https://syspin.iisc.ac.in"
+    website: "https://syspin.iisc.ac.in",
   },
   {
     id: "25",
@@ -423,9 +444,9 @@ const timelineData: TimelineEvent[] = [
       "Online and offline voice synthesis",
       "IVR integration",
       "Screen reader support",
-      "Accessibility focus for visually impaired"
+      "Accessibility focus for visually impaired",
     ],
-    website: "https://indiantts.com"
+    website: "https://indiantts.com",
   },
   {
     id: "26",
@@ -440,9 +461,9 @@ const timelineData: TimelineEvent[] = [
       "Multiple Indian languages support",
       "Accessibility-focused design",
       "Speech synthesis applications",
-      "Government AI initiative"
+      "Government AI initiative",
     ],
-    website: "https://aikosh.indiaai.gov.in"
+    website: "https://aikosh.indiaai.gov.in",
   },
   {
     id: "27",
@@ -457,9 +478,9 @@ const timelineData: TimelineEvent[] = [
       "Natural, expressive voices",
       "Real-time synthesis capability",
       "Code-mixed language support",
-      "Hindi, Marathi, Tamil, Telugu, Bengali support"
+      "Hindi, Marathi, Tamil, Telugu, Bengali support",
     ],
-    website: "https://www.sarvam.ai/apis/text-to-speech"
+    website: "https://www.sarvam.ai/apis/text-to-speech",
   },
   {
     id: "28",
@@ -474,9 +495,9 @@ const timelineData: TimelineEvent[] = [
       "Improved voice quality",
       "Fine-grained voice control",
       "Scalable business applications",
-      "Enhanced expressiveness"
+      "Enhanced expressiveness",
     ],
-    website: "https://www.sarvam.ai/apis/text-to-speech"
+    website: "https://www.sarvam.ai/apis/text-to-speech",
   },
   // Image Models
   {
@@ -492,9 +513,9 @@ const timelineData: TimelineEvent[] = [
       "Fine-tuned on Indian landscapes and culture",
       "Classical motifs to modern interpretations",
       "Advanced AI using Stable Diffusion",
-      "Trained on vast dataset of Indian images"
+      "Trained on vast dataset of Indian images",
     ],
-    website: "https://www.bharatdiffusion.ai"
+    website: "https://www.bharatdiffusion.ai",
   },
   {
     id: "30",
@@ -509,9 +530,9 @@ const timelineData: TimelineEvent[] = [
       "Supports English and 17 Indian languages",
       "Trained on 70 million images",
       "Focuses on efficiency and realism",
-      "Cost-effective for commercial use"
+      "Cost-effective for commercial use",
     ],
-    website: "https://fractal.ai"
+    website: "https://fractal.ai",
   },
   // Video Models
   {
@@ -527,9 +548,9 @@ const timelineData: TimelineEvent[] = [
       "Subtitle generation",
       "Audio/video dubbing",
       "Video translation across Indic languages",
-      "Content localization and accessibility"
+      "Content localization and accessibility",
     ],
-    website: "https://ai4bharat.org"
+    website: "https://ai4bharat.org",
   },
   {
     id: "32",
@@ -544,73 +565,103 @@ const timelineData: TimelineEvent[] = [
       "Multi-modal content creation",
       "14+ Indian languages support",
       "Conversational AI with video",
-      "Virtual assistant capabilities"
+      "Virtual assistant capabilities",
     ],
-    website: "https://corover.ai/bharatgpt/"
-  }
+    website: "https://corover.ai/bharatgpt/",
+  },
 ];
 
 interface InteractiveTimelineProps {
   searchTerm: string;
 }
 
-export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) => {
+export const InteractiveTimeline = ({
+  searchTerm,
+}: InteractiveTimelineProps) => {
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
-  const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(
+    null
+  );
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const filteredData = timelineData.filter(event => {
-    const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  const filteredData = timelineData.filter((event) => {
+    const matchesSearch =
+      event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       event.organization.toLowerCase().includes(searchTerm.toLowerCase()) ||
       event.description.toLowerCase().includes(searchTerm.toLowerCase());
-    
+
     const matchesYear = selectedYear ? event.year === selectedYear : true;
-    const matchesCategory = selectedCategory ? event.category === selectedCategory : true;
-    
+    const matchesCategory = selectedCategory
+      ? event.category === selectedCategory
+      : true;
+
     return matchesSearch && matchesYear && matchesCategory;
   });
 
-  const years = Array.from(new Set(timelineData.map(event => event.year))).sort();
-  const categories = ["LLM", "TTS", "Image", "Video", "Government", "Research"];
+  const years = Array.from(
+    new Set(timelineData.map((event) => event.year))
+  ).sort();
+  const categories = ["LLM", "TTS", "Image", "Video", "Government"];
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "LLM": return "bg-blue-100 text-blue-800";
-      case "TTS": return "bg-purple-100 text-purple-800";
-      case "Image": return "bg-pink-100 text-pink-800";
-      case "Video": return "bg-indigo-100 text-indigo-800";
-      case "Research": return "bg-green-100 text-green-800";
-      case "Startup": return "bg-orange-100 text-orange-800";
-      case "Partnership": return "bg-yellow-100 text-yellow-800";
-      case "Government": return "bg-red-100 text-red-800";
-      default: return "bg-gray-100 text-gray-800";
+      case "LLM":
+        return "bg-blue-100 text-blue-800";
+      case "TTS":
+        return "bg-purple-100 text-purple-800";
+      case "Image":
+        return "bg-pink-100 text-pink-800";
+      case "Video":
+        return "bg-indigo-100 text-indigo-800";
+      case "Research":
+        return "bg-green-100 text-green-800";
+      case "Startup":
+        return "bg-orange-100 text-orange-800";
+      case "Partnership":
+        return "bg-yellow-100 text-yellow-800";
+      case "Government":
+        return "bg-red-100 text-red-800";
+      default:
+        return "bg-gray-100 text-gray-800";
     }
   };
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case "TTS": return MicIcon;
-      case "Image": return ImageIcon;
-      case "Video": return VideoIcon;
-      default: return BrainIcon;
+      case "TTS":
+        return MicIcon;
+      case "Image":
+        return ImageIcon;
+      case "Video":
+        return VideoIcon;
+      default:
+        return BrainIcon;
     }
   };
 
   const getCategoryBorderColor = (category: string) => {
     switch (category) {
-      case "TTS": return "border-purple-500";
-      case "Image": return "border-pink-500";
-      case "Video": return "border-indigo-500";
-      default: return "border-blue-500";
+      case "TTS":
+        return "border-purple-500";
+      case "Image":
+        return "border-pink-500";
+      case "Video":
+        return "border-indigo-500";
+      default:
+        return "border-blue-500";
     }
   };
 
   const getCategoryTextColor = (category: string) => {
     switch (category) {
-      case "TTS": return "text-purple-500";
-      case "Image": return "text-pink-500";
-      case "Video": return "text-indigo-500";
-      default: return "text-blue-500";
+      case "TTS":
+        return "text-purple-500";
+      case "Image":
+        return "text-pink-500";
+      case "Video":
+        return "text-indigo-500";
+      default:
+        return "text-blue-500";
     }
   };
 
@@ -628,7 +679,7 @@ export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) =>
           >
             All Years
           </Button>
-          {years.map(year => (
+          {years.map((year) => (
             <Button
               key={year}
               variant={selectedYear === year ? "default" : "outline"}
@@ -651,7 +702,7 @@ export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) =>
           >
             All Types
           </Button>
-          {categories.map(category => (
+          {categories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
@@ -659,10 +710,15 @@ export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) =>
               className="rounded-full text-xs sm:text-sm"
               size="sm"
             >
-              {category === "LLM" ? "LLMs" : 
-               category === "TTS" ? "Text-to-Speech" : 
-               category === "Image" ? "Image Generation" :
-               category === "Video" ? "Video Generation" : category}
+              {category === "LLM"
+                ? "LLMs"
+                : category === "TTS"
+                ? "Text-to-Speech"
+                : category === "Image"
+                ? "Image Generation"
+                : category === "Video"
+                ? "Video Generation"
+                : category}
             </Button>
           ))}
         </div>
@@ -671,46 +727,79 @@ export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) =>
       {/* Timeline */}
       <div className="relative">
         <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-        
+
         <div className="space-y-6 sm:space-y-8">
           {filteredData.map((event, index) => {
             const IconComponent = getCategoryIcon(event.category);
             const borderColor = getCategoryBorderColor(event.category);
             const textColor = getCategoryTextColor(event.category);
-            
+
             return (
-              <div key={event.id} className="relative flex items-start space-x-3 sm:space-x-6">
-                <div className={`flex-shrink-0 w-8 h-8 sm:w-16 sm:h-16 bg-white border-2 sm:border-4 ${borderColor} rounded-full flex items-center justify-center shadow-lg`}>
-                  <IconComponent className={`w-3 h-3 sm:w-6 sm:h-6 ${textColor}`} />
+              <div
+                key={event.id}
+                className="relative flex items-start space-x-3 sm:space-x-6"
+              >
+                <div
+                  className={`flex-shrink-0 w-8 h-8 sm:w-16 sm:h-16 bg-white border-2 sm:border-4 ${borderColor} rounded-full flex items-center justify-center shadow-lg`}
+                >
+                  <IconComponent
+                    className={`w-3 h-3 sm:w-6 sm:h-6 ${textColor}`}
+                  />
                 </div>
-                
-                <Card 
+
+                <Card
                   className={`flex-1 border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${
-                    selectedEvent?.id === event.id ? 'ring-2 ring-blue-500' : ''
+                    selectedEvent?.id === event.id ? "ring-2 ring-blue-500" : ""
                   }`}
-                  onClick={() => setSelectedEvent(selectedEvent?.id === event.id ? null : event)}
+                  onClick={() =>
+                    setSelectedEvent(
+                      selectedEvent?.id === event.id ? null : event
+                    )
+                  }
                 >
                   <CardHeader className="pb-3 sm:pb-4">
                     <div className="flex items-start justify-between">
                       <div className="space-y-1 sm:space-y-2 flex-1 min-w-0">
                         <div className="flex items-center space-x-2 flex-wrap gap-1">
                           <CalendarIcon className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 flex-shrink-0" />
-                          <span className="text-xs sm:text-sm text-gray-500 font-medium">{event.date}</span>
-                          <Badge className={`${getCategoryColor(event.category)} text-xs`}>
-                            {event.category === "LLM" ? "LLM" : 
-                             event.category === "TTS" ? "TTS" : 
-                             event.category === "Image" ? "Image" :
-                             event.category === "Video" ? "Video" : event.category}
+                          <span className="text-xs sm:text-sm text-gray-500 font-medium">
+                            {event.date}
+                          </span>
+                          <Badge
+                            className={`${getCategoryColor(
+                              event.category
+                            )} text-xs`}
+                          >
+                            {event.category === "LLM"
+                              ? "LLM"
+                              : event.category === "TTS"
+                              ? "TTS"
+                              : event.category === "Image"
+                              ? "Image"
+                              : event.category === "Video"
+                              ? "Video"
+                              : event.category}
                           </Badge>
                         </div>
-                        <CardTitle className="text-lg sm:text-xl text-gray-900 break-words">{event.title}</CardTitle>
+                        <CardTitle className="text-lg sm:text-xl text-gray-900 break-words">
+                          {event.title}
+                        </CardTitle>
                         <CardDescription className="text-blue-600 font-medium text-sm sm:text-base break-words">
                           {event.organization}
                         </CardDescription>
                       </div>
                       {event.website && (
-                        <Button variant="ghost" size="sm" asChild className="flex-shrink-0 ml-2">
-                          <a href={event.website} target="_blank" rel="noopener noreferrer">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          asChild
+                          className="flex-shrink-0 ml-2"
+                        >
+                          <a
+                            href={event.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <ExternalLinkIcon className="w-3 h-3 sm:w-4 sm:h-4" />
                           </a>
                         </Button>
@@ -718,16 +807,25 @@ export const InteractiveTimeline = ({ searchTerm }: InteractiveTimelineProps) =>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <p className="text-gray-700 mb-4 text-sm sm:text-base break-words">{event.description}</p>
-                    
+                    <p className="text-gray-700 mb-4 text-sm sm:text-base break-words">
+                      {event.description}
+                    </p>
+
                     {selectedEvent?.id === event.id && (
                       <div className="space-y-3 pt-4 border-t border-gray-200">
-                        <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Key Features:</h4>
+                        <h4 className="font-semibold text-gray-900 text-sm sm:text-base">
+                          Key Features:
+                        </h4>
                         <ul className="space-y-2">
                           {event.details.map((detail, idx) => (
-                            <li key={idx} className="flex items-start space-x-2">
+                            <li
+                              key={idx}
+                              className="flex items-start space-x-2"
+                            >
                               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-600 text-sm sm:text-base break-words">{detail}</span>
+                              <span className="text-gray-600 text-sm sm:text-base break-words">
+                                {detail}
+                              </span>
                             </li>
                           ))}
                         </ul>
