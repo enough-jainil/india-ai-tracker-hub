@@ -42,7 +42,37 @@ interface TimelineEvent {
   website?: string;
 }
 
-const timelineData: TimelineEvent[] = [
+// Helper function to convert month names to numbers for sorting
+const getMonthNumber = (month: string): number => {
+  const months = {
+    Jan: 1,
+    Feb: 2,
+    Mar: 3,
+    Apr: 4,
+    May: 5,
+    Jun: 6,
+    Jul: 7,
+    Aug: 8,
+    Sep: 9,
+    Oct: 10,
+    Nov: 11,
+    Dec: 12,
+    January: 1,
+    February: 2,
+    March: 3,
+    April: 4,
+    June: 6,
+    July: 7,
+    August: 8,
+    September: 9,
+    October: 10,
+    November: 11,
+    December: 12,
+  };
+  return months[month as keyof typeof months] || 1;
+};
+
+const unsortedTimelineData: TimelineEvent[] = [
   {
     id: "1",
     date: "Dec 2020",
@@ -945,6 +975,14 @@ const timelineData: TimelineEvent[] = [
   },
 ];
 
+// Sort the timeline data chronologically
+const timelineData = [...unsortedTimelineData].sort((a, b) => {
+  if (a.year !== b.year) {
+    return a.year - b.year;
+  }
+  return getMonthNumber(a.month) - getMonthNumber(b.month);
+});
+
 interface InteractiveTimelineProps {
   searchTerm: string;
 }
@@ -974,7 +1012,7 @@ export const InteractiveTimeline = ({
 
   const years = Array.from(
     new Set(timelineData.map((event) => event.year))
-  ).sort();
+  ).sort((a, b) => a - b);
   const categories = [
     "LLM",
     "TTS",
