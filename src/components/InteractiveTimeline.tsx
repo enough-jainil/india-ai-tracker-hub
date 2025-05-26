@@ -15,6 +15,16 @@ import {
   MicIcon,
   ImageIcon,
   VideoIcon,
+  BookOpenIcon,
+  RocketIcon,
+  HandshakeIcon,
+  BuildingIcon,
+  LanguagesIcon,
+  SearchIcon,
+  ArrowRightLeftIcon,
+  HeadphonesIcon,
+  CpuIcon,
+  PenToolIcon,
 } from "lucide-react";
 
 interface TimelineEvent {
@@ -1048,7 +1058,7 @@ export const InteractiveTimeline = ({
       case "LID":
         return "bg-lime-100 text-lime-800";
       case "MT":
-        return "bg-orange-100 text-orange-800";
+        return "bg-amber-100 text-amber-800";
       case "ASR":
         return "bg-cyan-100 text-cyan-800";
       default:
@@ -1058,12 +1068,30 @@ export const InteractiveTimeline = ({
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
+      case "LLM":
+        return CpuIcon;
       case "TTS":
         return MicIcon;
       case "Image":
         return ImageIcon;
       case "Video":
         return VideoIcon;
+      case "Research":
+        return BookOpenIcon;
+      case "Startup":
+        return RocketIcon;
+      case "Partnership":
+        return HandshakeIcon;
+      case "Government":
+        return BuildingIcon;
+      case "Transliteration":
+        return PenToolIcon;
+      case "LID":
+        return SearchIcon;
+      case "MT":
+        return ArrowRightLeftIcon;
+      case "ASR":
+        return HeadphonesIcon;
       default:
         return BrainIcon;
     }
@@ -1071,27 +1099,63 @@ export const InteractiveTimeline = ({
 
   const getCategoryBorderColor = (category: string) => {
     switch (category) {
+      case "LLM":
+        return "border-blue-500";
       case "TTS":
         return "border-purple-500";
       case "Image":
         return "border-pink-500";
       case "Video":
         return "border-indigo-500";
+      case "Research":
+        return "border-green-500";
+      case "Startup":
+        return "border-orange-500";
+      case "Partnership":
+        return "border-yellow-500";
+      case "Government":
+        return "border-red-500";
+      case "Transliteration":
+        return "border-teal-500";
+      case "LID":
+        return "border-lime-500";
+      case "MT":
+        return "border-amber-500";
+      case "ASR":
+        return "border-cyan-500";
       default:
-        return "border-blue-500";
+        return "border-gray-500";
     }
   };
 
   const getCategoryTextColor = (category: string) => {
     switch (category) {
+      case "LLM":
+        return "text-blue-500";
       case "TTS":
         return "text-purple-500";
       case "Image":
         return "text-pink-500";
       case "Video":
         return "text-indigo-500";
+      case "Research":
+        return "text-green-500";
+      case "Startup":
+        return "text-orange-500";
+      case "Partnership":
+        return "text-yellow-500";
+      case "Government":
+        return "text-red-500";
+      case "Transliteration":
+        return "text-teal-500";
+      case "LID":
+        return "text-lime-500";
+      case "MT":
+        return "text-amber-500";
+      case "ASR":
+        return "text-cyan-500";
       default:
-        return "text-blue-500";
+        return "text-gray-500";
     }
   };
 
