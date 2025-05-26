@@ -33,7 +33,11 @@ interface TimelineEvent {
     | "Research"
     | "Startup"
     | "Partnership"
-    | "Government";
+    | "Government"
+    | "Transliteration"
+    | "LID"
+    | "MT"
+    | "ASR";
   details: string[];
   website?: string;
 }
@@ -569,6 +573,376 @@ const timelineData: TimelineEvent[] = [
     ],
     website: "https://corover.ai/bharatgpt/",
   },
+  {
+    id: "33",
+    date: "May 2022",
+    year: 2022,
+    month: "May",
+    title: "Aksharantar Dataset",
+    organization: "AI4Bharat",
+    description:
+      "Largest open-source transliteration dataset for Indian languages (21 languages, 12 scripts, 26M pairs)",
+    category: "Transliteration",
+    details: [
+      "26 million transliteration pairs",
+      "21 languages, 12 scripts",
+      "First dataset to cover 7 languages and 1 language family",
+      "Aksharantar test set: 103,000 word pairs",
+      "EMNLP 2022 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/aksharantar",
+  },
+  {
+    id: "34",
+    date: "May 2022",
+    year: 2022,
+    month: "May",
+    title: "IndicXlit Model",
+    organization: "AI4Bharat",
+    description:
+      "Multilingual transliteration model trained on Aksharantar dataset, 15% accuracy improvement on benchmarks.",
+    category: "Transliteration",
+    details: [
+      "Multilingual transliteration",
+      "15% accuracy improvement",
+      "Strong baselines on Aksharantar test set",
+      "EMNLP 2022 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indicxlit",
+  },
+  {
+    id: "35",
+    date: "May 2023",
+    year: 2023,
+    month: "May",
+    title: "IndicLID Model",
+    organization: "AI4Bharat",
+    description:
+      "Language identifier for native and romanized scripts, 47 classes, new standard for LID in romanized Indian text.",
+    category: "LID",
+    details: [
+      "Supports 47 classes (24 native, 21 roman, English, Others)",
+      "New standard for LID in romanized Indian text",
+      "ACL 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indiclid",
+  },
+  {
+    id: "36",
+    date: "July 2023",
+    year: 2023,
+    month: "July",
+    title: "Bhasha-Abhijnaanam Dataset",
+    organization: "AI4Bharat",
+    description:
+      "Comprehensive LID test set for native-script and romanized text, spanning all 22 Indic languages.",
+    category: "LID",
+    details: [
+      "Covers all 22 Indic languages",
+      "Native-script and romanized text",
+      "ACL 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/bhasha-abhijnaanam",
+  },
+  {
+    id: "37",
+    date: "April 2021",
+    year: 2021,
+    month: "April",
+    title: "Samanantar Corpus",
+    organization: "AI4Bharat",
+    description:
+      "Largest publicly available parallel corpus for Indic languages with 49.7M sentence pairs between English and 11 Indic languages.",
+    category: "MT",
+    details: [
+      "49.7 million sentence pairs (English-Indic)",
+      "37.4 million newly mined pairs",
+      "83.4 million pairs between 55 Indic language pairs",
+      "TACL 2021 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/samanantar",
+  },
+  {
+    id: "38",
+    date: "April 2021",
+    year: 2021,
+    month: "April",
+    title: "IndicTrans Model",
+    organization: "AI4Bharat",
+    description:
+      "Transformer-based multilingual NMT model trained on Samanantar dataset, outperforming existing models on FLORES benchmarks.",
+    category: "MT",
+    details: [
+      "Transformer-based multilingual NMT",
+      "Trained on Samanantar dataset",
+      "Outperforms existing models on FLORES",
+      "TACL 2021 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indictrans",
+  },
+  {
+    id: "39",
+    date: "May 2023",
+    year: 2023,
+    month: "May",
+    title: "BPCC Dataset",
+    organization: "AI4Bharat",
+    description:
+      "Comprehensive parallel corpus for all 22 scheduled Indic languages with 228M mined pairs and 2.2M gold-standard pairs.",
+    category: "MT",
+    details: [
+      "228 million mined pairs (126M newly added)",
+      "2.2 million gold-standard English-Indic pairs",
+      "First datasets for 7 languages",
+      "TMLR 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/bpcc",
+  },
+  {
+    id: "40",
+    date: "May 2023",
+    year: 2023,
+    month: "May",
+    title: "IndicTrans2 Model",
+    organization: "AI4Bharat",
+    description:
+      "First open-source Transformer-based multilingual NMT model for all 22 scheduled Indic languages with script unification.",
+    category: "MT",
+    details: [
+      "Supports all 22 scheduled Indic languages",
+      "Multiple scripts for low-resource languages",
+      "Script unification for enhanced transfer learning",
+      "TMLR 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indictrans2",
+  },
+  {
+    id: "41",
+    date: "May 2023",
+    year: 2023,
+    month: "May",
+    title: "CTQAScorer Model",
+    organization: "AI4Bharat",
+    description:
+      "Regression model that selects examples based on multiple features to maximize translation quality.",
+    category: "MT",
+    details: [
+      "Example selection for translation quality",
+      "Multiple feature-based regression",
+      "EMNLP 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/ctqascorer",
+  },
+  {
+    id: "42",
+    date: "July 2023",
+    year: 2023,
+    month: "July",
+    title: "IndicMT-Eval Dataset",
+    organization: "AI4Bharat",
+    description:
+      "Comprehensive MQM dataset with 7,000 detailed annotations covering five Indian languages and seven MT systems.",
+    category: "MT",
+    details: [
+      "7,000 detailed MQM annotations",
+      "Five Indian languages coverage",
+      "Seven MT systems evaluation",
+      "ACL 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indicmt-eval",
+  },
+  {
+    id: "43",
+    date: "December 2023",
+    year: 2023,
+    month: "December",
+    title: "DecoMT Model",
+    organization: "AI4Bharat",
+    description:
+      "Novel few-shot prompting approach that breaks down translation into word chunk translations.",
+    category: "MT",
+    details: [
+      "Few-shot prompting approach",
+      "Word chunk translation decomposition",
+      "EMNLP 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/decomt",
+  },
+  {
+    id: "44",
+    date: "November 2024",
+    year: 2024,
+    month: "November",
+    title: "BhasaAnuvaad Dataset",
+    organization: "AI4Bharat",
+    description:
+      "Largest Indic-language Speech Translation dataset with 44,400 hours of speech and 17 million text segments.",
+    category: "MT",
+    details: [
+      "44,400 hours of speech",
+      "17 million text segments",
+      "13 of 22 scheduled Indian languages + English",
+      "ARXIV 2024 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/bhasaanuvaad",
+  },
+  {
+    id: "45",
+    date: "June 2021",
+    year: 2021,
+    month: "June",
+    title: "IndicTTS",
+    organization: "AI4Bharat",
+    description:
+      "Multilingual text-to-speech synthesis system for 10 Indian languages with natural-sounding speech output.",
+    category: "TTS",
+    details: [
+      "Supports 10 Indian languages",
+      "Natural-sounding speech output",
+      "INTERSPEECH 2021 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indictts",
+  },
+  {
+    id: "46",
+    date: "July 2021",
+    year: 2021,
+    month: "July",
+    title: "IndicASR",
+    organization: "AI4Bharat",
+    description:
+      "Multilingual ASR model for 11 Indian languages achieving state-of-the-art performance on Indic speech benchmarks.",
+    category: "ASR",
+    details: [
+      "Supports 11 Indian languages",
+      "State-of-the-art performance on Indic benchmarks",
+      "INTERSPEECH 2021 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indicasr",
+  },
+  {
+    id: "47",
+    date: "April 2022",
+    year: 2022,
+    month: "April",
+    title: "Bhasha-Abhilekh",
+    organization: "AI4Bharat",
+    description:
+      "Large-scale speech corpus for 10 Indian languages designed to train and evaluate ASR models.",
+    category: "ASR",
+    details: [
+      "Large-scale speech corpus",
+      "10 Indian languages",
+      "Designed for ASR training and evaluation",
+      "LREC 2022 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/bhasha-abhilekh",
+  },
+  {
+    id: "48",
+    date: "October 2022",
+    year: 2022,
+    month: "October",
+    title: "IndicGPT",
+    organization: "AI4Bharat",
+    description:
+      "Large-scale generative language model for Indian languages trained on massive corpus of Indic text.",
+    category: "LLM",
+    details: [
+      "Large-scale generative language model",
+      "Trained on massive Indic text corpus",
+      "NeurIPS 2022 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indicgpt",
+  },
+  {
+    id: "49",
+    date: "November 2022",
+    year: 2022,
+    month: "November",
+    title: "Bhasha-Abhigyan",
+    organization: "AI4Bharat",
+    description:
+      "Comprehensive speech synthesis dataset for 12 Indian languages with diverse speakers and speaking styles.",
+    category: "TTS",
+    details: [
+      "12 Indian languages coverage",
+      "Diverse speakers and speaking styles",
+      "EMNLP 2022 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/bhasha-abhigyan",
+  },
+  {
+    id: "50",
+    date: "March 2023",
+    year: 2023,
+    month: "March",
+    title: "IndicVoices",
+    organization: "AI4Bharat",
+    description:
+      "Collection of high-quality, open-source voice models for 15 Indian languages enabling custom voice applications.",
+    category: "TTS",
+    details: [
+      "15 Indian languages support",
+      "High-quality voice models",
+      "Open-source collection",
+      "Enables custom voice applications",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indicvoices",
+  },
+  {
+    id: "51",
+    date: "May 2023",
+    year: 2023,
+    month: "May",
+    title: "IndicULM",
+    organization: "AI4Bharat",
+    description:
+      "Universal language model supporting code-switching and cross-lingual transfer for Indic languages.",
+    category: "LLM",
+    details: [
+      "Universal language model",
+      "Code-switching support",
+      "Cross-lingual transfer for Indic languages",
+      "EACL 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indiculm",
+  },
+  {
+    id: "52",
+    date: "November 2023",
+    year: 2023,
+    month: "November",
+    title: "IndicDiarize",
+    organization: "AI4Bharat",
+    description:
+      "Speaker diarization toolkit for Indic languages that identifies different speakers in audio recordings.",
+    category: "ASR",
+    details: [
+      "Speaker diarization for Indic languages",
+      "Identifies different speakers in recordings",
+      "IEEE SLT 2023 publication",
+    ],
+    website: "https://ai4bharat.iitm.ac.in/indicdiarize",
+  },
+  {
+    id: "53",
+    date: "December 2023",
+    year: 2023,
+    month: "December",
+    title: "A-star Toolkit",
+    organization: "AI4Bharat",
+    description:
+      "Open-source toolkit for building and deploying ASR systems for Indian languages.",
+    category: "ASR",
+    details: [
+      "Open-source ASR toolkit",
+      "Building and deploying ASR systems",
+      "Focused on Indian languages",
+      "GitHub release",
+    ],
+    website: "https://github.com/AI4Bharat/A-star",
+  },
 ];
 
 interface InteractiveTimelineProps {
@@ -601,7 +975,17 @@ export const InteractiveTimeline = ({
   const years = Array.from(
     new Set(timelineData.map((event) => event.year))
   ).sort();
-  const categories = ["LLM", "TTS", "Image", "Video", "Government"];
+  const categories = [
+    "LLM",
+    "TTS",
+    "Image",
+    "Video",
+    "Government",
+    "Transliteration",
+    "LID",
+    "MT",
+    "ASR",
+  ];
 
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -621,6 +1005,14 @@ export const InteractiveTimeline = ({
         return "bg-yellow-100 text-yellow-800";
       case "Government":
         return "bg-red-100 text-red-800";
+      case "Transliteration":
+        return "bg-teal-100 text-teal-800";
+      case "LID":
+        return "bg-lime-100 text-lime-800";
+      case "MT":
+        return "bg-orange-100 text-orange-800";
+      case "ASR":
+        return "bg-cyan-100 text-cyan-800";
       default:
         return "bg-gray-100 text-gray-800";
     }
@@ -718,6 +1110,14 @@ export const InteractiveTimeline = ({
                 ? "Image Generation"
                 : category === "Video"
                 ? "Video Generation"
+                : category === "Transliteration"
+                ? "Transliteration"
+                : category === "LID"
+                ? "LID"
+                : category === "MT"
+                ? "Machine Translation"
+                : category === "ASR"
+                ? "ASR"
                 : category}
             </Button>
           ))}
@@ -778,6 +1178,14 @@ export const InteractiveTimeline = ({
                               ? "Image"
                               : event.category === "Video"
                               ? "Video"
+                              : event.category === "Transliteration"
+                              ? "Transliteration"
+                              : event.category === "LID"
+                              ? "LID"
+                              : event.category === "MT"
+                              ? "Machine Translation"
+                              : event.category === "ASR"
+                              ? "ASR"
                               : event.category}
                           </Badge>
                         </div>

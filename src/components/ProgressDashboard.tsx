@@ -33,28 +33,102 @@ import {
 
 export const ProgressDashboard = () => {
   const yearlyProgress = [
-    { year: "2020", llms: 1, tts: 0, image: 0, video: 0, organizations: 1 },
-    { year: "2021", llms: 1, tts: 1, image: 0, video: 0, organizations: 2 },
-    { year: "2022", llms: 3, tts: 3, image: 0, video: 0, organizations: 4 },
-    { year: "2023", llms: 5, tts: 4, image: 1, video: 1, organizations: 8 },
-    { year: "2024", llms: 15, tts: 6, image: 2, video: 2, organizations: 16 },
-    { year: "2025", llms: 20, tts: 8, image: 2, video: 2, organizations: 20 },
+    {
+      year: "2020",
+      llms: 1,
+      tts: 0,
+      image: 0,
+      video: 0,
+      transliteration: 0,
+      lid: 0,
+      mt: 0,
+      asr: 0,
+      organizations: 1,
+    },
+    {
+      year: "2021",
+      llms: 1,
+      tts: 2,
+      image: 0,
+      video: 0,
+      transliteration: 0,
+      lid: 0,
+      mt: 2,
+      asr: 1,
+      organizations: 2,
+    },
+    {
+      year: "2022",
+      llms: 4,
+      tts: 4,
+      image: 0,
+      video: 0,
+      transliteration: 2,
+      lid: 0,
+      mt: 0,
+      asr: 1,
+      organizations: 4,
+    },
+    {
+      year: "2023",
+      llms: 6,
+      tts: 5,
+      image: 1,
+      video: 1,
+      transliteration: 0,
+      lid: 2,
+      mt: 4,
+      asr: 2,
+      organizations: 8,
+    },
+    {
+      year: "2024",
+      llms: 15,
+      tts: 6,
+      image: 2,
+      video: 2,
+      transliteration: 0,
+      lid: 0,
+      mt: 1,
+      asr: 0,
+      organizations: 16,
+    },
+    {
+      year: "2025",
+      llms: 20,
+      tts: 8,
+      image: 2,
+      video: 2,
+      transliteration: 0,
+      lid: 0,
+      mt: 0,
+      asr: 0,
+      organizations: 20,
+    },
   ];
 
   const modelTypeDistribution = [
-    { name: "LLMs", value: 20, color: "#3B82F6" },
-    { name: "TTS Models", value: 8, color: "#8B5CF6" },
+    { name: "LLMs", value: 22, color: "#3B82F6" },
+    { name: "TTS Models", value: 11, color: "#8B5CF6" },
     { name: "Image Models", value: 2, color: "#EC4899" },
     { name: "Video Models", value: 2, color: "#6366F1" },
+    { name: "Transliteration Models", value: 2, color: "#14B8A6" },
+    { name: "LID Models", value: 2, color: "#A3E635" },
+    { name: "MT Models", value: 8, color: "#F97316" },
+    { name: "ASR Models", value: 5, color: "#06B6D4" },
   ];
 
   const organizationData = [
     {
       name: "AI4Bharat",
-      llms: 4,
-      tts: 1,
+      llms: 6,
+      tts: 4,
       image: 0,
       video: 1,
+      transliteration: 2,
+      lid: 2,
+      mt: 8,
+      asr: 5,
       type: "Academic",
     },
     { name: "Sarvam AI", llms: 5, tts: 2, image: 0, video: 0, type: "Startup" },
@@ -165,7 +239,7 @@ export const ProgressDashboard = () => {
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-9 gap-6">
         <Card className="border-0 shadow-lg">
           <CardContent className="p-6">
             <div className="flex flex-col items-center text-center space-y-4">
@@ -189,6 +263,34 @@ export const ProgressDashboard = () => {
               <div>
                 <p className="text-2xl font-bold text-gray-900">8+</p>
                 <p className="text-gray-600 text-sm">TTS Models</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg">
+          <CardContent className="p-6">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-3 rounded-lg bg-teal-500">
+                <span className="h-6 w-6 text-white font-bold">अ</span>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-gray-900">2</p>
+                <p className="text-gray-600 text-sm">Transliteration Models</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg">
+          <CardContent className="p-6">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-3 rounded-lg bg-lime-500">
+                <span className="h-6 w-6 text-white font-bold">LID</span>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-gray-900">2</p>
+                <p className="text-gray-600 text-sm">LID Models</p>
               </div>
             </div>
           </CardContent>
@@ -245,6 +347,34 @@ export const ProgressDashboard = () => {
               <div>
                 <p className="text-2xl font-bold text-gray-900">22+</p>
                 <p className="text-gray-600 text-sm">Languages</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg">
+          <CardContent className="p-6">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-3 rounded-lg bg-orange-500">
+                <span className="h-6 w-6 text-white font-bold">MT</span>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-gray-900">8</p>
+                <p className="text-gray-600 text-sm">MT Models</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-lg">
+          <CardContent className="p-6">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-3 rounded-lg bg-cyan-500">
+                <span className="h-6 w-6 text-white font-bold">ASR</span>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-gray-900">5</p>
+                <p className="text-gray-600 text-sm">ASR Models</p>
               </div>
             </div>
           </CardContent>
@@ -313,6 +443,34 @@ export const ProgressDashboard = () => {
                 />
                 <Line
                   type="monotone"
+                  dataKey="transliteration"
+                  stroke="#14B8A6"
+                  strokeWidth={3}
+                  name="Transliteration Models"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="lid"
+                  stroke="#A3E635"
+                  strokeWidth={3}
+                  name="LID Models"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="mt"
+                  stroke="#F97316"
+                  strokeWidth={3}
+                  name="MT Models"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="asr"
+                  stroke="#06B6D4"
+                  strokeWidth={3}
+                  name="ASR Models"
+                />
+                <Line
+                  type="monotone"
                   dataKey="organizations"
                   stroke="#10B981"
                   strokeWidth={3}
@@ -377,6 +535,14 @@ export const ProgressDashboard = () => {
                 <Bar dataKey="tts" fill="#8B5CF6" name="TTS Models" />
                 <Bar dataKey="image" fill="#EC4899" name="Image Models" />
                 <Bar dataKey="video" fill="#6366F1" name="Video Models" />
+                <Bar
+                  dataKey="transliteration"
+                  fill="#14B8A6"
+                  name="Transliteration Models"
+                />
+                <Bar dataKey="lid" fill="#A3E635" name="LID Models" />
+                <Bar dataKey="mt" fill="#F97316" name="MT Models" />
+                <Bar dataKey="asr" fill="#06B6D4" name="ASR Models" />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
